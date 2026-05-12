@@ -24,7 +24,7 @@
   --serif:"Playfair Display","Times New Roman",serif;
   --sans:"Manrope","Helvetica Neue",Arial,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
-  --pad-x:96px;--pad-top:68px;--pad-bottom:68px;
+  --pad-x:120px;--pad-top:80px;--pad-bottom:80px;
 }
 *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 html,body{margin:0;padding:0;background:#0a0a0a;}
@@ -37,34 +37,26 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   radial-gradient(ellipse 1200px 800px at 78% 28%,rgba(255,255,255,0.07),transparent 60%),
   radial-gradient(ellipse 700px 500px at 18% 82%,rgba(255,112,51,0.10),transparent 70%);
   pointer-events:none;z-index:0;}
-.bg-navy::after{content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(115deg,rgba(255,255,255,0.022) 0 1px,transparent 1px 7px);
-  pointer-events:none;z-index:0;}
+.bg-navy::after{display:none;}
 
 .bg-cream{background:var(--cream);color:var(--ink);}
-.bg-cream::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;
+.bg-cream::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;
   background:linear-gradient(180deg,var(--navy) 0%,var(--blue) 50%,var(--orange) 100%);
   z-index:4;pointer-events:none;}
-.bg-cream::after{content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(115deg,rgba(193,95,60,0.035) 0 1px,transparent 1px 8px);
-  pointer-events:none;z-index:0;}
+.bg-cream::after{display:none;}
 
 .bg-purple{background:var(--purple-deep);color:var(--cream);}
 .bg-purple::before{content:"";position:absolute;inset:0;background:
   radial-gradient(ellipse 1100px 700px at 72% 32%,rgba(106,53,194,0.55),transparent 65%),
   radial-gradient(ellipse 600px 500px at 18% 78%,rgba(255,112,51,0.12),transparent 70%);
   pointer-events:none;z-index:0;}
-.bg-purple::after{content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(115deg,rgba(255,255,255,0.025) 0 1px,transparent 1px 7px);
-  pointer-events:none;z-index:0;}
+.bg-purple::after{display:none;}
 
 .bg-duo{background:var(--orange);color:#fff;}
 .bg-duo::before{content:"";position:absolute;inset:0;
   background:linear-gradient(118deg,var(--orange) 0%,var(--orange) 48%,var(--blue) 52%,var(--blue) 100%);
   z-index:0;}
-.bg-duo::after{content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(115deg,rgba(255,255,255,0.06) 0 1px,transparent 1px 9px);
-  pointer-events:none;z-index:0;}
+.bg-duo::after{display:none;}
 
 .bg-aic-glow{background:#0b1424;color:#fff;}
 .bg-aic-glow::before{content:"";position:absolute;inset:0;background:
@@ -72,14 +64,12 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   radial-gradient(ellipse 1100px 900px at 60% 50%,#0825A8 0%,rgba(8,37,168,0) 60%),
   radial-gradient(circle 800px at 18% 22%,#1a2540 0%,#0b1424 70%);
   z-index:0;pointer-events:none;}
-.bg-aic-glow::after{content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(115deg,rgba(255,255,255,0.028) 0 1px,transparent 1px 8px);
-  pointer-events:none;z-index:0;}
+.bg-aic-glow::after{display:none;}
 
 
 /* decorative shapes */
-.blob{position:absolute;border-radius:50%;background:var(--terra);opacity:0.07;pointer-events:none;z-index:0;}
-.ring{position:absolute;border-radius:50%;border:1.5px solid var(--terra);opacity:0.32;pointer-events:none;z-index:0;}
+.blob{position:absolute;border-radius:50%;background:var(--terra);opacity:0.04;pointer-events:none;z-index:0;}
+.ring{position:absolute;border-radius:50%;border:1px solid var(--terra);opacity:0.12;pointer-events:none;z-index:0;}
 
 /* ============ FRAME ============ */
 .frame{position:absolute;inset:0;padding:var(--pad-top) var(--pad-x) var(--pad-bottom);
@@ -320,6 +310,17 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute-on-cream);}
 .brand-stamp img{height:24px;width:auto;}
 .brand-stamp img.anth-icon{height:22px;}
+
+/* ============ We Make It Lab — placeholder ============ */
+.wemil-chip{display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:16px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--mute-on-cream);}
+.wemil-chip .ph{display:inline-flex;align-items:center;justify-content:center;
+  height:22px;padding:0 10px;border:1px dashed var(--terra);
+  font-size:11px;color:var(--terra);letter-spacing:0.08em;font-weight:700;}
+.footbar .partners .wemil-chip{font-size:14px;letter-spacing:0.10em;}
+.footbar.on-dark .partners .wemil-chip{color:var(--mute-on-dark);}
+.footbar .partners .wemil-chip .ph{border-color:currentColor;color:inherit;opacity:0.55;}
 
 /* ============ Logos: quitar fondo blanco en contextos claros ============ */
 .footbar.on-cream .partners img{mix-blend-mode:multiply;}
@@ -629,17 +630,20 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         <div class="left">
           <div class="num-block"><span class="big">01</span><span class="lbl">Sesión Anthropic</span></div>
           <h1>Una mirada a<br><em>Claude</em>.</h1>
-          <span class="brand-stamp"><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"> Anthropic · Partner técnico</span>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <span class="brand-stamp"><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"> Anthropic · Partner técnico</span>
+            <span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span>
+          </div>
         </div>
         <div class="speaker-card">
-          <span class="sp-role"><img src="assets/icon-anthropic.png" alt="Anthropic"> Charla introductoria · Anthropic</span>
+          <span class="sp-role"><img src="assets/icon-anthropic.png" alt="Anthropic"> Charla introductoria · Anthropic × We Make It Lab</span>
           <h3 class="sp-name">Cristian<br><em>Cabrera.</em></h3>
           <p class="sp-bio"><b>Founder</b> de We Make It Lab, partner oficial de <b>Anthropic</b>. Abre el evento con una mirada introductoria a Claude y al stack de la compañía.</p>
         </div>
       </div>
       <div class="footbar on-cream">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
-        <div class="partners"><span class="lbl">Sesión</span><img class="anth" style="height:26px;" src="assets/logo-anthropic.png" alt="Anthropic"></div>
+        <div class="partners"><span class="lbl">Sesión</span><img class="anth" style="height:26px;" src="assets/logo-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span></div>
       </div>
     </div>
   </section>
@@ -659,7 +663,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       </div>
       <div class="footbar on-cream">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
-        <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div>
+        <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span></div>
       </div>
     </div>
   </section>
@@ -679,7 +683,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       </div>
       <div class="footbar on-cream">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
-        <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div>
+        <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span></div>
       </div>
     </div>
   </section>
