@@ -110,6 +110,8 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .footbar .partners .lbl{color:var(--mute-on-cream);}
 .footbar.on-dark .partners .lbl{color:var(--mute-on-dark);}
 .footbar .partners img{height:22px;width:auto;display:block;}
+.footbar .partners img.anth-icon{height:16px;}
+.footbar .partners img.anth{height:16px;}
 .footbar .partners img.galo{height:30px;}
 .footbar .partners img.xplora{height:32px;}
 .footbar.on-dark .partners img.anth-icon,
@@ -244,9 +246,9 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .logo-card img{max-width:100%;display:block;}
 .logo-card img.aic{height:148px;width:auto;}
 .logo-card img.xplora{max-height:158px;max-width:86%;width:auto;height:auto;}
-.logo-card img.anth{height:82px;width:auto;}
+.logo-card img.anth{max-height:38px;max-width:80%;width:auto;height:auto;}
 .logo-card img.galo{max-height:108px;max-width:78%;width:auto;height:auto;}
-.logo-card img.wemil{height:130px;width:auto;filter:brightness(0);}
+.logo-card img.wemil{height:48px;width:auto;filter:brightness(0);}
 .tier-row-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
 .tier-row-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 
@@ -316,11 +318,11 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .wemil-chip{display:inline-flex;align-items:center;gap:10px;
   font-family:var(--mono);font-size:16px;letter-spacing:0.14em;text-transform:uppercase;
   color:var(--mute-on-cream);}
-.wemil-chip img{width:auto;height:36px;display:block;}
+.wemil-chip img{width:auto;height:22px;display:block;}
 .footbar.on-cream .partners .wemil-chip img,
 .session-divider .wemil-chip img{filter:brightness(0);}
 .footbar .partners .wemil-chip{font-size:0;letter-spacing:0;gap:0;}
-.footbar .partners .wemil-chip img{height:62px;}
+.footbar .partners .wemil-chip img{height:22px;}
 .footbar.on-dark .partners .wemil-chip{color:var(--mute-on-dark);}
 .wemil-card-ph{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;}
 .wemil-card-ph .logo-bg{width:120px;height:54px;background:var(--navy);border-radius:6px;
@@ -644,9 +646,9 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         <div class="left">
           <div class="num-block"><span class="big">01</span><span class="lbl">Sesión Anthropic</span></div>
           <h1>Una mirada a<br><em>Claude</em>.</h1>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <span class="brand-stamp"><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"> Anthropic · Partner técnico</span>
-            <span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span>
+          <div style="display:flex;align-items:center;gap:28px;">
+            <img src="assets/icon-anthropic.png" alt="Anthropic" style="height:20px;width:auto;mix-blend-mode:multiply;">
+            <img src="assets/logo-wemil.png" alt="We Make It Lab" style="height:20px;width:auto;filter:brightness(0);">
           </div>
         </div>
         <div class="speaker-card">
@@ -657,7 +659,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       </div>
       <div class="footbar on-cream">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
-        <div class="partners"><span class="lbl">Sesión</span><img class="anth" style="height:26px;" src="assets/logo-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span></div>
+        <div class="partners"><span class="lbl">Sesión</span><img class="anth" src="assets/logo-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span></div>
       </div>
     </div>
   </section>
