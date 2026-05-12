@@ -1,0 +1,807 @@
+<!DOCTYPE html><html lang="es"><head>
+
+
+
+
+<meta charset="utf-8">
+<title>Workshop · Claude + Obsidian · 14.05.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<script src="deck-stage.js"></script>
+<style>
+:root{
+  --navy:#2b3a4a;--navy-deep:#1d2935;--navy-soft:#3c4d5f;
+  --orange:#FF7033;--orange-soft:#ff8a55;
+  --blue:#0076DB;--blue-soft:#2891e8;
+  --cream:#F4F3EE;--cream-deep:#ebe8df;
+  --terra:#C15F3C;--ink:#1a232e;
+  --purple:#3a0d8c;--purple-deep:#1d0552;--purple-soft:#6a35c2;
+  --galo:#4A5A3C;
+  --mute-on-dark:#a4b2c0;--mute-on-cream:#6d5d52;
+  --rule-on-dark:rgba(255,255,255,0.18);--rule-on-cream:#d8d2c4;
+  --display:"DM Serif Display","Playfair Display",serif;
+  --serif:"Playfair Display","Times New Roman",serif;
+  --sans:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --pad-x:110px;--pad-top:78px;--pad-bottom:78px;
+}
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html,body{margin:0;padding:0;background:#0a0a0a;}
+body{font-family:var(--sans);}
+deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
+
+/* ============ BACKGROUNDS ============ */
+.bg-navy{background:var(--navy);color:var(--cream);}
+.bg-navy::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 1200px 800px at 78% 28%,rgba(255,255,255,0.07),transparent 60%),
+  radial-gradient(ellipse 700px 500px at 18% 82%,rgba(255,112,51,0.10),transparent 70%);
+  pointer-events:none;z-index:0;}
+.bg-navy::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,0.022) 0 1px,transparent 1px 7px);
+  pointer-events:none;z-index:0;}
+
+.bg-cream{background:var(--cream);color:var(--ink);}
+.bg-cream::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;
+  background:linear-gradient(180deg,var(--navy) 0%,var(--blue) 50%,var(--orange) 100%);
+  z-index:4;pointer-events:none;}
+.bg-cream::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(115deg,rgba(193,95,60,0.035) 0 1px,transparent 1px 8px);
+  pointer-events:none;z-index:0;}
+
+.bg-purple{background:var(--purple-deep);color:var(--cream);}
+.bg-purple::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 1100px 700px at 72% 32%,rgba(106,53,194,0.55),transparent 65%),
+  radial-gradient(ellipse 600px 500px at 18% 78%,rgba(255,112,51,0.12),transparent 70%);
+  pointer-events:none;z-index:0;}
+.bg-purple::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,0.025) 0 1px,transparent 1px 7px);
+  pointer-events:none;z-index:0;}
+
+.bg-duo{background:var(--orange);color:#fff;}
+.bg-duo::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(118deg,var(--orange) 0%,var(--orange) 48%,var(--blue) 52%,var(--blue) 100%);
+  z-index:0;}
+.bg-duo::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,0.06) 0 1px,transparent 1px 9px);
+  pointer-events:none;z-index:0;}
+
+.bg-aic-glow{background:#0b1424;color:#fff;}
+.bg-aic-glow::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 1600px 1100px at 92% 58%,#ff7033 0%,rgba(255,112,51,0) 52%),
+  radial-gradient(ellipse 1100px 900px at 60% 50%,#0825A8 0%,rgba(8,37,168,0) 60%),
+  radial-gradient(circle 800px at 18% 22%,#1a2540 0%,#0b1424 70%);
+  z-index:0;pointer-events:none;}
+.bg-aic-glow::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,0.028) 0 1px,transparent 1px 8px);
+  pointer-events:none;z-index:0;}
+
+
+/* decorative shapes */
+.blob{position:absolute;border-radius:50%;background:var(--terra);opacity:0.07;pointer-events:none;z-index:0;}
+.ring{position:absolute;border-radius:50%;border:1.5px solid var(--terra);opacity:0.32;pointer-events:none;z-index:0;}
+
+/* ============ FRAME ============ */
+.frame{position:absolute;inset:0;padding:var(--pad-top) var(--pad-x) var(--pad-bottom);
+  display:flex;flex-direction:column;z-index:3;}
+
+/* ============ TOPBAR ============ */
+.topbar{display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:22px;letter-spacing:0.18em;text-transform:uppercase;}
+.topbar .mark{display:inline-flex;align-items:center;gap:12px;font-weight:700;}
+.topbar .mark .dot{width:12px;height:12px;border-radius:50%;background:var(--orange);}
+.topbar .meta{opacity:0.85;}
+.topbar.on-dark{color:var(--mute-on-dark);}
+.topbar.on-dark .mark{color:var(--cream);}
+.topbar.on-cream{color:var(--mute-on-cream);}
+.topbar.on-cream .mark{color:var(--ink);}
+.topbar.on-cream .mark .dot{background:var(--navy);}
+
+/* ============ FOOTER (logos) ============ */
+.footbar{margin-top:auto;display:flex;justify-content:space-between;align-items:center;
+  padding-top:22px;border-top:1px solid var(--rule-on-cream);}
+.footbar.on-dark{border-top:1px solid var(--rule-on-dark);}
+.footbar .host{display:flex;align-items:center;gap:14px;
+  font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;}
+.footbar .host img{height:34px;width:auto;display:block;}
+.footbar .host .xpl-chip{display:inline-flex;align-items:center;justify-content:center;
+  width:38px;height:38px;border-radius:8px;border:2px solid #8b5cf6;
+  background:rgba(124,28,138,0.10);flex-shrink:0;}
+.footbar.on-dark .host .xpl-chip{background:rgba(139,92,246,0.18);}
+.footbar .host .xpl-chip img{width:22px;height:22px;display:block;}
+.footbar .host .plus{font-family:var(--mono);font-size:22px;color:var(--mute-on-cream);font-weight:400;}
+.footbar.on-dark .host .plus{color:var(--mute-on-dark);}
+.footbar .host .lbl{color:var(--mute-on-cream);}
+.footbar.on-dark .host .lbl{color:var(--mute-on-dark);}
+.footbar .partners{display:flex;align-items:center;gap:24px;
+  font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;}
+.footbar .partners .lbl{color:var(--mute-on-cream);}
+.footbar.on-dark .partners .lbl{color:var(--mute-on-dark);}
+.footbar .partners img{height:22px;width:auto;display:block;}
+.footbar .partners img.galo{height:30px;}
+.footbar .partners img.xplora{height:32px;}
+.footbar.on-dark .partners img.anth-icon,
+.footbar.on-dark .partners img.galo{filter:brightness(0) invert(1);opacity:0.92;}
+.footbar.on-dark .partners img.xplora{filter:brightness(0) invert(1);opacity:0.92;}
+.footbar .partners .sep{width:1px;height:24px;background:currentColor;opacity:0.25;}
+
+/* ============ SLIDE 01 — HERO ============ */
+.hero{display:grid;grid-template-rows:auto 1fr auto auto;gap:0;height:100%;}
+.hero-brand{display:flex;align-items:center;gap:30px;
+  padding-bottom:24px;border-bottom:1px solid var(--rule-on-dark);}
+.hero-brand img.aic{height:72px;width:auto;display:block;}
+.hero-brand .x{font-family:var(--display);font-style:italic;font-size:46px;color:var(--orange);line-height:1;}
+.hero-brand .xpl-chip{display:inline-flex;align-items:center;justify-content:center;
+  width:64px;height:64px;border-radius:14px;border:2px solid #8b5cf6;
+  background:rgba(124,28,138,0.18);}
+.hero-brand .xpl-chip img{width:38px;height:38px;display:block;}
+.hero-brand .copres{display:flex;flex-direction:column;gap:4px;
+  font-family:var(--mono);font-size:20px;text-transform:uppercase;letter-spacing:0.14em;color:var(--mute-on-dark);}
+.hero-brand .copres b{color:var(--cream);font-weight:700;}
+.hero-brand .badge{margin-left:auto;display:inline-flex;align-items:center;gap:14px;
+  padding:12px 22px;border-radius:999px;background:var(--orange);color:#fff;
+  font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;}
+.hero-body{display:grid;grid-template-columns:0.85fr 1.5fr;gap:60px;align-items:end;padding:56px 0 32px;}
+.hero-date{display:flex;flex-direction:column;gap:14px;}
+.hero-date .eyebrow{font-family:var(--mono);font-size:20px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);}
+.hero-date .big{font-family:var(--display);font-size:300px;line-height:0.82;color:var(--cream);letter-spacing:-0.04em;}
+.hero-date .big em{color:var(--orange);font-style:italic;}
+.hero-date .sub{font-family:var(--mono);font-size:22px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute-on-dark);margin-top:8px;}
+.hero-headline{position:relative;}
+.hero-headline .kicker{font-family:var(--mono);font-size:24px;letter-spacing:0.22em;text-transform:uppercase;color:var(--orange);margin-bottom:18px;font-weight:700;}
+.hero-headline h1{margin:0;font-family:var(--display);font-weight:400;font-size:172px;line-height:0.84;letter-spacing:-0.025em;color:var(--cream);}
+.hero-headline h1 em{color:var(--orange);font-style:italic;}
+.hero-headline .stack{margin-top:24px;display:inline-flex;align-items:center;gap:14px;
+  padding:10px 20px;border:1.5px solid var(--orange);border-radius:999px;
+  font-family:var(--mono);font-size:22px;color:var(--orange);font-weight:700;letter-spacing:0.14em;text-transform:uppercase;}
+.hero-headline .stack .star{color:var(--orange);}
+.hero-meta-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:1px solid var(--rule-on-dark);padding-top:24px;}
+.hero-meta-row .cell{display:flex;flex-direction:column;gap:6px;padding-right:30px;border-right:1px solid var(--rule-on-dark);}
+.hero-meta-row .cell:last-child{border-right:none;}
+.hero-meta-row .lbl{font-family:var(--mono);font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute-on-dark);font-weight:700;}
+.hero-meta-row .val{font-family:var(--display);font-size:38px;line-height:1;color:var(--cream);}
+.hero-meta-row .val em{color:var(--orange);font-style:italic;}
+
+/* ============ SLIDE 02 — AI Collective duotone ============ */
+.aic-wrap{height:100%;display:grid;grid-template-rows:auto 1fr auto;}
+.aic-head{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;color:#fff;
+  font-family:var(--mono);font-size:22px;letter-spacing:0.18em;text-transform:uppercase;}
+.aic-head .mark{display:inline-flex;align-items:center;gap:12px;font-weight:700;}
+.aic-head .mark .dot{width:12px;height:12px;border-radius:50%;background:#fff;}
+.aic-hero{position:relative;display:grid;grid-template-columns:0.95fr 1.05fr;gap:60px;align-items:center;padding:30px 0;}
+.aic-hero .left{position:relative;display:flex;flex-direction:column;gap:30px;justify-content:center;color:#fff;}
+.aic-hero .eyebrow{font-family:var(--mono);font-size:22px;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:14px;}
+.aic-hero .eyebrow .sq{width:14px;height:14px;background:#fff;}
+.aic-hero h1{margin:0;font-family:var(--display);font-weight:400;font-size:118px;line-height:0.92;letter-spacing:-0.025em;color:#fff;}
+.aic-hero h1 em{font-style:italic;color:#ff7033;}
+.aic-hero .lede{margin:0;font-size:30px;line-height:1.4;color:rgba(255,255,255,0.95);max-width:600px;}
+.aic-hero .lede b{font-weight:800;}
+.aic-hero .right{position:relative;display:flex;align-items:center;justify-content:center;}
+.aic-mono{width:520px;height:520px;border-radius:50%;background:rgba(255,255,255,0.96);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 30px 80px rgba(0,0,0,0.18);position:relative;z-index:1;}
+.aic-mono img{width:380px;height:auto;display:block;}
+.aic-mono::before{content:"";position:absolute;width:100%;height:100%;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,0.45);transform:scale(1.12);z-index:-1;}
+.aic-mono::after{content:"";position:absolute;width:100%;height:100%;border-radius:50%;
+  border:1px solid rgba(255,255,255,0.25);transform:scale(1.25);z-index:-1;}
+.aic-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid rgba(255,255,255,0.3);padding-top:24px;color:#fff;}
+.aic-pillars .col{display:flex;flex-direction:column;gap:10px;padding-right:34px;border-right:1px solid rgba(255,255,255,0.3);}
+.aic-pillars .col:last-child{border-right:none;}
+.aic-pillars .num{font-family:var(--mono);font-size:20px;letter-spacing:0.18em;font-weight:700;opacity:0.85;}
+.aic-pillars h4{margin:0;font-family:var(--display);font-size:36px;line-height:1.0;font-weight:400;}
+.aic-pillars p{margin:0;font-size:20px;line-height:1.4;color:rgba(255,255,255,0.88);}
+
+
+/* ============ SLIDE 03 — QR Comunidad ============ */
+.qr-cta{display:flex;flex-direction:column;gap:6px;margin-top:6px;
+  padding:18px 22px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.04);max-width:520px;}
+.qr-cta .qr-label{font-family:var(--mono);font-size:22px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);font-weight:700;}
+.qr-cta .qr-meta{font-family:var(--mono);font-size:17px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.72);}
+.qr-frame{display:flex;flex-direction:column;align-items:center;gap:20px;}
+.qr-slot{width:440px;height:440px;background:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  box-shadow:0 30px 80px rgba(0,0,0,0.45);position:relative;
+  border:6px solid rgba(255,255,255,0.5);}
+.qr-slot::before{content:"";position:absolute;inset:14px;border:2px dashed rgba(11,20,36,0.25);}
+.qr-slot .qr-mark{font-family:var(--mono);font-size:34px;letter-spacing:0.2em;color:var(--navy);font-weight:700;z-index:1;}
+.qr-slot .qr-hint{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--mute-on-cream);text-align:center;z-index:1;max-width:300px;line-height:1.3;}
+.qr-frame .qr-foot{font-family:var(--mono);font-size:20px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.9);}
+
+/* ============ SLIDE 04 — Xplora ============ */
+.xpl-wrap{flex:1;display:flex;flex-direction:column;min-height:0;gap:18px;}
+.xpl-hero{display:grid;grid-template-columns:1fr 0.85fr;gap:50px;align-items:center;padding:6px 0;flex:1;min-height:0;}
+.xpl-hero .left{display:flex;flex-direction:column;gap:18px;}
+.xpl-hero .eyebrow{font-family:var(--mono);font-size:22px;letter-spacing:0.22em;text-transform:uppercase;color:#fff;font-weight:700;display:flex;align-items:center;gap:14px;}
+.xpl-hero .eyebrow .sq{width:14px;height:14px;background:var(--orange);}
+.xpl-hero h1{margin:0;font-family:var(--display);font-weight:400;font-size:84px;line-height:0.96;letter-spacing:-0.02em;color:#fff;}
+.xpl-hero h1 em{font-style:italic;color:var(--orange);}
+.xpl-hero .tag{font-family:var(--mono);font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#d5c5f0;font-weight:600;}
+.xpl-hero .lede{margin:0;font-size:19px;line-height:1.5;color:rgba(255,255,255,0.95);max-width:480px;}
+.xpl-hero .lede b{color:var(--orange);font-weight:800;}
+.xpl-hero .right{position:relative;display:flex;align-items:center;justify-content:center;}
+.xpl-compass{width:300px;height:300px;display:flex;align-items:center;justify-content:center;position:relative;}
+.xpl-compass img{width:210px;height:auto;display:block;filter:drop-shadow(0 20px 50px rgba(0,0,0,0.35));position:relative;z-index:2;}
+.xpl-compass::before{content:"";position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,112,51,0.35) 0%,rgba(255,112,51,0.0) 60%);z-index:0;}
+.xpl-compass::after{content:"";position:absolute;width:88%;height:88%;border-radius:50%;
+  border:1.5px dashed rgba(255,255,255,0.3);z-index:1;}
+.xpl-three{display:grid;grid-template-columns:repeat(3,1fr);gap:0;flex-shrink:0;border-top:1px solid var(--rule-on-dark);padding-top:16px;color:#fff;}
+.xpl-three .col{padding-right:36px;border-right:1px solid var(--rule-on-dark);display:flex;flex-direction:column;gap:8px;}
+.xpl-three .col:last-child{border-right:none;}
+.xpl-three .k{font-family:var(--mono);font-size:15px;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);font-weight:700;}
+.xpl-three .v{font-family:var(--display);font-size:20px;line-height:1.25;color:#fff;}
+
+/* ============ SLIDE 04 — Anfitriones y Aliados ============ */
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:60px;margin:18px 0 18px;}
+.section-head h2{margin:0;font-family:var(--display);font-weight:400;font-size:72px;line-height:0.96;letter-spacing:-0.02em;color:var(--ink);max-width:1100px;}
+.section-head h2 em{color:var(--terra);font-style:italic;}
+.section-head .kicker{max-width:480px;font-size:24px;line-height:1.45;color:#3b322c;margin:0;}
+.section-head .kicker b{color:var(--terra);font-weight:700;}
+
+.sponsors-tier{margin-top:8px;}
+.tier-label{display:flex;align-items:center;gap:18px;margin-bottom:18px;}
+.tier-label .badge{font-family:var(--mono);font-size:18px;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--cream);background:var(--navy);padding:8px 18px;font-weight:700;}
+.tier-label .rule{flex:1;height:1px;background:var(--rule-on-cream);}
+.tier-label .meta{font-family:var(--mono);font-size:18px;color:var(--mute-on-cream);text-transform:uppercase;letter-spacing:0.12em;}
+.logo-card{height:210px;border:1px solid var(--rule-on-cream);background:#fff;display:flex;align-items:center;justify-content:center;position:relative;padding:30px;}
+.logo-card.tall{height:240px;}
+.logo-card .lbl{position:absolute;bottom:12px;left:16px;font-family:var(--mono);font-size:14px;
+  color:var(--mute-on-cream);letter-spacing:0.14em;text-transform:uppercase;}
+.logo-card img.aic{height:160px;width:auto;}
+.logo-card img.xplora{height:190px;width:auto;}
+.logo-card img.anth{height:90px;width:auto;}
+.logo-card img.galo{height:170px;width:auto;}
+.tier-row-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+
+/* ============ Speaker session divider ============ */
+.session-divider{flex:1;display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:end;padding-top:40px;}
+.session-divider .left{display:flex;flex-direction:column;gap:36px;}
+.session-divider .num-block{font-family:var(--mono);font-size:22px;color:var(--terra);letter-spacing:0.16em;text-transform:uppercase;
+  display:flex;align-items:center;gap:18px;}
+.session-divider .num-block .big{font-family:var(--display);font-size:84px;color:var(--navy);letter-spacing:-0.02em;line-height:1;}
+.session-divider .num-block .lbl{color:var(--ink);font-weight:700;}
+.session-divider h1{margin:0;font-family:var(--display);font-weight:400;font-size:128px;line-height:0.92;color:var(--ink);letter-spacing:-0.02em;}
+.session-divider h1 em{color:var(--terra);font-style:italic;}
+.session-divider .speaker-card{display:flex;flex-direction:column;gap:18px;border-top:1px solid var(--rule-on-cream);padding-top:28px;}
+.session-divider .sp-role{font-family:var(--mono);font-size:20px;color:var(--terra);letter-spacing:0.14em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:14px;}
+.session-divider .sp-role img{height:26px;width:auto;}
+.session-divider .sp-name{margin:0;font-family:var(--display);font-size:80px;line-height:0.92;color:var(--ink);}
+.session-divider .sp-name em{color:var(--terra);font-style:italic;}
+.session-divider .sp-bio{margin:0;font-size:24px;line-height:1.45;color:#3b322c;max-width:560px;}
+.session-divider .sp-bio b{color:var(--ink);font-weight:700;}
+.session-divider .right-portrait{height:100%;min-height:520px;
+  background:radial-gradient(circle at 32% 32%,var(--terra) 0,transparent 55%),
+    radial-gradient(circle at 70% 70%,var(--orange) 0,transparent 55%),var(--navy);
+  border:1px solid var(--rule-on-cream);position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:32px;}
+.session-divider .right-portrait .ptrt-label{font-family:var(--mono);font-size:18px;color:var(--cream);letter-spacing:0.14em;text-transform:uppercase;opacity:0.85;}
+.session-divider .right-portrait .partner-stamp{position:absolute;top:32px;right:32px;display:flex;align-items:center;gap:12px;color:var(--cream);}
+.session-divider .right-portrait .partner-stamp img{height:34px;width:auto;filter:brightness(0) invert(1);opacity:0.95;}
+.session-divider .right-portrait .partner-stamp.galo img{filter:brightness(0) invert(1);}
+
+/* ============ Content placeholder ============ */
+.content-placeholder{flex:1;display:flex;flex-direction:column;gap:40px;padding-top:32px;}
+.content-placeholder .ph-eyebrow{display:flex;align-items:center;gap:14px;
+  font-family:var(--mono);font-size:20px;color:var(--navy);letter-spacing:0.16em;text-transform:uppercase;font-weight:700;}
+.content-placeholder .ph-eyebrow .sq{width:14px;height:14px;background:var(--navy);}
+.content-placeholder .ph-eyebrow .meta{color:var(--mute-on-cream);font-weight:500;}
+.content-placeholder h2{margin:0;font-family:var(--display);font-weight:400;font-size:104px;line-height:0.94;color:var(--ink);letter-spacing:-0.01em;max-width:1480px;}
+.content-placeholder h2 em{color:var(--terra);font-style:italic;}
+.content-placeholder .slot{flex:1;border:1.5px dashed var(--terra);background:rgba(193,95,60,0.04);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:var(--terra);}
+.content-placeholder .slot .slot-mark{font-family:var(--mono);font-size:22px;letter-spacing:0.2em;text-transform:uppercase;opacity:0.85;}
+.content-placeholder .slot .slot-hint{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--mute-on-cream);max-width:720px;text-align:center;line-height:1.3;}
+
+/* ============ Bases ============ */
+.bases-grid{flex:1;display:grid;grid-template-columns:1fr 1.05fr;gap:80px;padding-top:32px;}
+.bases-grid h2{margin:0 0 24px;font-family:var(--display);font-weight:400;font-size:96px;line-height:0.94;color:var(--ink);letter-spacing:-0.01em;}
+.bases-grid h2 em{color:var(--terra);font-style:italic;}
+.bases-grid .lede{margin:0;font-size:26px;line-height:1.45;color:#3b322c;max-width:540px;}
+.bases-grid .lede b{color:var(--ink);font-weight:700;}
+.bases-list{display:flex;flex-direction:column;}
+.bases-list .row{display:grid;grid-template-columns:74px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--rule-on-cream);align-items:baseline;}
+.bases-list .row:last-child{border-bottom:1px solid var(--rule-on-cream);}
+.bases-list .n{font-family:var(--mono);font-size:24px;color:var(--navy);font-weight:700;letter-spacing:0.1em;}
+.bases-list h4{margin:0 0 6px;font-family:var(--display);font-weight:400;font-size:36px;color:var(--ink);}
+.bases-list p{margin:0;font-size:22px;line-height:1.45;color:#3b322c;}
+.bases-list p b{color:var(--ink);font-weight:700;}
+.pill{display:inline-flex;align-items:center;gap:12px;padding:10px 18px;border-radius:999px;
+  font-family:var(--mono);font-size:18px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;}
+.pill .sq{width:12px;height:12px;}
+
+/* small inline brand stamp for divider */
+.brand-stamp{display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute-on-cream);}
+.brand-stamp img{height:24px;width:auto;}
+.brand-stamp img.anth-icon{height:22px;}
+</style>
+</head>
+<body style="">
+
+<deck-stage width="1920" height="1080" style="--deck-rail-w: 188px;">
+
+  <!-- ============ SLIDE 01 — HERO ============ -->
+  <section class="bg-navy">
+    <div class="frame">
+      <div class="hero">
+        <div class="hero-brand">
+          <img class="aic" src="assets/logo-aicollective-white.webp" alt="The AI Collective">
+          <span class="x">×</span>
+          <span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora"></span>
+          <div class="copres">
+            <span><b>Xplora</b> · UCEMA</span>
+            <span>Co-host del workshop</span>
+          </div>
+          <span class="badge">Edición 01</span>
+        </div>
+
+        <div class="hero-body">
+          <div class="hero-date">
+            <span class="eyebrow">14 · Mayo · 2026</span>
+            <span class="big">14<em>.</em><br>05</span>
+            <span class="sub">17 — 19h · UCEMA, Av. Córdoba 374</span>
+          </div>
+          <div class="hero-headline">
+            <span class="kicker">Workshop · Claude + Obsidian</span>
+            <h1>Construí tu<br><em>second brain</em><br>con IA.</h1>
+            <span class="stack"><span class="star">✻</span> Claude × Obsidian · live demo</span>
+          </div>
+        </div>
+
+        <div class="hero-meta-row">
+          <div class="cell">
+            <span class="lbl">Fecha</span>
+            <span class="val"><em>Jueves</em> 14.05</span>
+          </div>
+          <div class="cell">
+            <span class="lbl">Horario</span>
+            <span class="val">17 — 19h</span>
+          </div>
+          <div class="cell">
+            <span class="lbl">Sede</span>
+            <span class="val">UCEMA · Aula Magna</span>
+          </div>
+          <div class="cell">
+            <span class="lbl">Stack</span>
+            <span class="val"><em>Claude</em> + Obsidian</span>
+          </div>
+        </div>
+
+        <div class="footbar on-dark">
+          <div class="host">
+            <img src="assets/logo-aicollective-white.webp" alt="The AI Collective">
+            <span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span>
+          </div>
+          <div class="partners">
+            <span class="lbl">Aliados</span>
+            <img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic">
+            <span class="sep"></span>
+            <img class="galo" src="assets/logo-galo.jpeg" alt="Galo">
+            <span class="sep"></span>
+            <img class="xplora" src="assets/logo-xplora.jpeg" alt="Xplora UCEMA">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 02 — AI Collective (glow) ============ -->
+  <section class="bg-aic-glow">
+    <div class="frame">
+      <div class="aic-wrap">
+        <div class="aic-head">
+          <span class="mark"><span class="dot"></span>&nbsp;The AI Collective · Buenos Aires</span>
+          <span>02 / 19 · Comunidad</span>
+        </div>
+
+        <div class="aic-hero">
+          <div class="left">
+            <span class="eyebrow"><span class="sq"></span>Anfitrión principal</span>
+            <h1>El <em>poder</em><br>de la<br>comunidad.</h1>
+            <p class="lede">Somos una <b>red de practicantes</b> que aprende, comparte y construye con IA en Buenos Aires. Workshops, demos en vivo y mentoreo entre pares — <b>sin academicismo, con manos en el código</b>.</p>
+          </div>
+          <div class="right">
+            <div class="aic-mono">
+              <img src="assets/logo-aicollective-full.png" alt="The AI Collective">
+            </div>
+          </div>
+        </div>
+
+        <div class="aic-pillars">
+          <div class="col">
+            <span class="num">01 · Comunidad</span>
+            <h4>+1.000 practicantes</h4>
+            <p>Builders, founders, devs e investigadores conectados por el uso real de IA.</p>
+          </div>
+          <div class="col">
+            <span class="num">02 · Encuentros</span>
+            <h4>Workshops abiertos</h4>
+            <p>Sesiones presenciales, demos en vivo y challenges con partners de la industria.</p>
+          </div>
+          <div class="col">
+            <span class="num">03 · Stack</span>
+            <h4>Herramientas reales</h4>
+            <p>Claude, Obsidian, agents y MCP — siempre desde casos de uso productivos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 03 — Sumate · QR Comunidad ============ -->
+  <section class="bg-aic-glow">
+    <div class="frame">
+      <div class="aic-wrap">
+        <div class="aic-head">
+          <span class="mark"><span class="dot"></span>&nbsp;Sumate · The AI Collective</span>
+          <span>03 / 19 · Networking</span>
+        </div>
+
+        <div class="aic-hero">
+          <div class="left">
+            <span class="eyebrow"><span class="sq"></span>Únete a la comunidad</span>
+            <h1>Escaneá<br>y <em>conectá</em>.</h1>
+            <p class="lede">Sumate a <b>The AI Collective Buenos Aires</b>. Workshops, hackathons y demos con los builders que están moviendo la aguja de la <b>IA aplicada</b> en la región.</p>
+            <div class="qr-cta">
+              <span class="qr-label">Escaneá el QR →</span>
+              <span class="qr-meta">Grupo de WhatsApp · Agenda de eventos</span>
+            </div>
+          </div>
+          <div class="right">
+            <div class="qr-frame">
+              <div class="qr-slot">
+                <span class="qr-mark">[ QR ]</span>
+                <span class="qr-hint">Insertar imagen del código QR</span>
+              </div>
+              <span class="qr-foot">aicollective.bsas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="aic-pillars">
+          <div class="col">
+            <span class="num">↗ WhatsApp</span>
+            <h4>Comunidad activa</h4>
+            <p>Conversaciones diarias sobre IA aplicada, prompts y proyectos en marcha.</p>
+          </div>
+          <div class="col">
+            <span class="num">↗ Eventos</span>
+            <h4>Próximos workshops</h4>
+            <p>Recibí cada lanzamiento antes que el feed público de la comunidad.</p>
+          </div>
+          <div class="col">
+            <span class="num">↗ Builders</span>
+            <h4>Networking real</h4>
+            <p>Conectá con +1.000 founders, devs y curiosos de Buenos Aires.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 04 — XPLORA (purple feature) ============ -->
+  <section class="bg-purple">
+    <div class="frame">
+      <div class="xpl-wrap">
+        <div class="topbar on-dark" style="color:rgba(255,255,255,0.7);">
+          <span class="mark" style="color:#fff;"><span class="dot" style="background:var(--orange);"></span>&nbsp;Workshop · Claude + Obsidian</span>
+          <span>04 / 19 · Co-host</span>
+        </div>
+
+        <div class="xpl-hero">
+          <div class="left">
+            <span class="eyebrow"><span class="sq"></span>Co-host &amp; sede</span>
+            <span class="tag">Xplora · UCEMA</span>
+            <h1>Donde la<br><em>innovación</em><br>se explora.</h1>
+            <p class="lede"><b>Xplora</b> es la iniciativa de innovación de <b>UCEMA</b> que abre sus aulas a comunidades, builders y empresas. Pone la <b>sede, el ecosistema académico y la red</b> para que el workshop pase del aula al impacto real.</p>
+          </div>
+          <div class="right">
+            <div class="xpl-compass">
+              <img src="assets/logo-xplora.jpeg" alt="Xplora">
+            </div>
+          </div>
+        </div>
+
+        <div class="xpl-three">
+          <div class="col">
+            <span class="k">Sede</span>
+            <span class="v">UCEMA · Aula Magna<br>Av. Córdoba 374, CABA</span>
+          </div>
+          <div class="col">
+            <span class="k">Ecosistema</span>
+            <span class="v">Conectá con docentes,<br>alumnos y partners.</span>
+          </div>
+          <div class="col">
+            <span class="k">Misión</span>
+            <span class="v"><em>Explorá</em> el futuro<br>de la educación + IA.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 05 — Anfitriones y Aliados ============ -->
+  <section class="bg-cream">
+    <div class="ring" style="width:720px;height:720px;left:-260px;top:-260px;"></div>
+    <div class="blob" style="width:280px;height:280px;right:80px;bottom:-100px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>05 / 19 · Red</span>
+      </div>
+
+      <div class="section-head">
+        <h2>Una red de <em>innovación</em>:<br>anfitriones y aliados.</h2>
+        <p class="kicker">Dos anfitriones que aportan comunidad y sede, dos aliados que aportan <b>tecnología y challenge final</b>.</p>
+      </div>
+
+      <div class="sponsors-tier">
+        <div class="tier-label">
+          <span class="badge">Anfitriones</span>
+          <span class="rule"></span>
+          <span class="meta">Comunidad · Sede</span>
+        </div>
+        <div class="tier-row-2">
+          <div class="logo-card tall"><img class="aic" src="assets/logo-aicollective-full.png" alt="The AI Collective"><span class="lbl">The AI Collective BA</span></div>
+          <div class="logo-card tall"><img class="xplora" src="assets/logo-xplora.jpeg" alt="Xplora UCEMA"><span class="lbl">Xplora · UCEMA</span></div>
+        </div>
+      </div>
+
+      <div class="sponsors-tier" style="margin-top:24px;">
+        <div class="tier-label">
+          <span class="badge">Aliados</span>
+          <span class="rule"></span>
+          <span class="meta">Charla &amp; Challenge</span>
+        </div>
+        <div class="tier-row-2">
+          <div class="logo-card"><img class="anth" src="assets/logo-anthropic.png" alt="Anthropic" style="width: 300px; height: 200px"><span class="lbl">Anthropic · Charla introductoria</span></div>
+          <div class="logo-card"><img class="galo" src="assets/logo-galo.jpeg" alt="Galo"><span class="lbl">Galo · Challenge final</span></div>
+        </div>
+      </div>
+
+      <div class="footbar on-cream" style="margin-top:24px;">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Aliados</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><img class="galo" src="assets/logo-galo.jpeg" alt="Galo"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 06 — Anthropic divider ============ -->
+  <section class="bg-cream">
+    <div class="blob" style="width:540px;height:540px;right:-200px;top:-180px;"></div>
+    <div class="ring" style="width:360px;height:360px;left:-120px;bottom:-120px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>06 / 19 · Sesión 01</span>
+      </div>
+      <div class="session-divider">
+        <div class="left">
+          <div class="num-block"><span class="big">01</span><span class="lbl">Sesión Anthropic</span></div>
+          <h1>Una mirada a<br><em>Claude</em>.</h1>
+          <span class="brand-stamp"><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"> Anthropic · Partner técnico</span>
+        </div>
+        <div class="speaker-card">
+          <span class="sp-role"><img src="assets/icon-anthropic.png" alt="Anthropic"> Charla introductoria · Anthropic</span>
+          <h3 class="sp-name">Cristian<br><em>Cabrera.</em></h3>
+          <p class="sp-bio"><b>Founder</b> de We Make It Lab, partner oficial de <b>Anthropic</b>. Abre el evento con una mirada introductoria a Claude y al stack de la compañía.</p>
+        </div>
+      </div>
+      <div class="footbar on-cream">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Sesión</span><img class="anth" style="height:26px;" src="assets/logo-anthropic.png" alt="Anthropic"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 07 — Anthropic 02 ============ -->
+  <section class="bg-cream">
+    <div class="ring" style="width:480px;height:480px;right:-160px;bottom:-180px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>07 / 19 · Sesión Anthropic</span>
+      </div>
+      <div class="content-placeholder">
+        <span class="ph-eyebrow"><span class="sq"></span>Sesión 01 · Anthropic <span class="meta">— Cristian Cabrera</span></span>
+        <h2>Título del <em>tema</em><br>02 de 03.</h2>
+        <div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div>
+      </div>
+      <div class="footbar on-cream">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 08 — Anthropic 03 ============ -->
+  <section class="bg-cream">
+    <div class="blob" style="width:380px;height:380px;left:-140px;top:-120px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>08 / 19 · Sesión Anthropic</span>
+      </div>
+      <div class="content-placeholder">
+        <span class="ph-eyebrow"><span class="sq"></span>Sesión 01 · Anthropic <span class="meta">— Cristian Cabrera</span></span>
+        <h2>Título del <em>tema</em><br>03 de 03.</h2>
+        <div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div>
+      </div>
+      <div class="footbar on-cream">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 09 — Jimmy divider ============ -->
+  <section class="bg-cream">
+    <div class="blob" style="width:600px;height:600px;left:-220px;top:-200px;"></div>
+    <div class="ring" style="width:380px;height:380px;right:80px;bottom:-160px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>09 / 19 · Sesión 02</span>
+      </div>
+      <div class="session-divider">
+        <div class="left">
+          <div class="num-block"><span class="big">02</span><span class="lbl">Workshop principal</span></div>
+          <h1>Construí tu<br><em>second brain</em>.</h1>
+          <span class="brand-stamp">Lideki · Sin Jr No Hay Sr</span>
+        </div>
+        <div class="speaker-card">
+          <span class="sp-role">Workshop principal · Lideki</span>
+          <h3 class="sp-name">Jimmy<br><em>Adaro.</em></h3>
+          <p class="sp-bio"><b>Co-founder, Tech &amp; Ops</b> en Lideki. Founder de <b>Sin Jr No Hay Sr</b> (+165K). Lleva el corazón del workshop con demo en vivo de Claude + Obsidian.</p>
+        </div>
+      </div>
+      <div class="footbar on-cream">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Aliado técnico</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDES 10–14 Jimmy 02–06 ============ -->
+  <section class="bg-cream">
+    <div class="ring" style="width:420px;height:420px;right:-140px;top:-120px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>10 / 19 · Sesión Jimmy</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>02 de 06.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Aliado</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div></div>
+    </div>
+  </section>
+  <section class="bg-cream">
+    <div class="blob" style="width:320px;height:320px;left:-100px;bottom:-120px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>11 / 19 · Sesión Jimmy</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>03 de 06.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Aliado</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div></div>
+    </div>
+  </section>
+  <section class="bg-cream">
+    <div class="ring" style="width:600px;height:600px;right:-200px;bottom:-240px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>12 / 19 · Sesión Jimmy</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>04 de 06.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Aliado</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div></div>
+    </div>
+  </section>
+  <section class="bg-cream">
+    <div class="blob" style="width:480px;height:480px;right:-160px;top:-160px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>13 / 19 · Sesión Jimmy</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>05 de 06.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Aliado</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div></div>
+    </div>
+  </section>
+  <section class="bg-cream">
+    <div class="ring" style="width:380px;height:380px;left:-130px;top:-120px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>14 / 19 · Sesión Jimmy</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>06 de 06.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Aliado</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div></div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 15 — Luciano divider ============ -->
+  <section class="bg-cream">
+    <div class="blob" style="width:540px;height:540px;right:-180px;top:-160px;"></div>
+    <div class="ring" style="width:320px;height:320px;left:-100px;bottom:-100px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>15 / 19 · Sesión 03</span></div>
+      <div class="session-divider">
+        <div class="left">
+          <div class="num-block"><span class="big">03</span><span class="lbl">Caso práctico</span></div>
+          <h1>Claude + Obsidian<br><em>en producción</em>.</h1>
+          <span class="brand-stamp">Personal · Ciberseguridad</span>
+        </div>
+        <div class="speaker-card">
+          <span class="sp-role">Caso práctico · Personal</span>
+          <h3 class="sp-name">Luciano<br><em>Esteban.</em></h3>
+          <p class="sp-bio"><b>Arquitecto de Ciberseguridad</b> en Personal. Comparte cómo aplica Claude + Obsidian en su <b>flujo diario</b> de trabajo y aprendizaje.</p>
+        </div>
+      </div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Aliado</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div></div>
+    </div>
+  </section>
+
+  <section class="bg-cream">
+    <div class="ring" style="width:420px;height:420px;right:-140px;top:-120px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>16 / 19 · Sesión Luciano</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 03 · Caso práctico <span class="meta">— Luciano Esteban</span></span><h2>Título del <em>tema</em><br>02 de 03.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Aliado</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div></div>
+    </div>
+  </section>
+
+  <section class="bg-cream">
+    <div class="blob" style="width:360px;height:360px;left:-120px;bottom:-120px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>17 / 19 · Sesión Luciano</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 03 · Caso práctico <span class="meta">— Luciano Esteban</span></span><h2>Título del <em>tema</em><br>03 de 03.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Aliado</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div></div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 18 — Galo divider ============ -->
+  <section class="bg-cream">
+    <div class="blob" style="width:640px;height:640px;right:-240px;top:-200px;"></div>
+    <div class="ring" style="width:420px;height:420px;left:-160px;bottom:-180px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>18 / 19 · Desafío</span></div>
+      <div class="session-divider">
+        <div class="left">
+          <div class="num-block"><span class="big">04</span><span class="lbl">Presentación del desafío</span></div>
+          <h1>El <em>desafío</em><br>Galo.</h1>
+          <span class="brand-stamp"><img src="assets/logo-galo.jpeg" alt="Galo"></span>
+        </div>
+        <div class="speaker-card">
+          <span class="sp-role"><img src="assets/logo-galo.jpeg" alt="Galo"> Challenge final · Galo</span>
+          <h3 class="sp-name">Franco<br><em>Pesce.</em></h3>
+          <p class="sp-bio"><b>CTO de Galo</b>. Lidera el diseño del desafío y el mentoreo en vivo. Cuenta el contexto del problema y las reglas de juego antes del trabajo en sala.</p>
+        </div>
+      </div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.jpeg" alt="Galo"></div></div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 19 — Bases ============ -->
+  <section class="bg-cream" data-deck-last-visible="">
+    <div class="ring" style="width:720px;height:720px;right:-260px;bottom:-260px;"></div>
+    <div class="blob" style="width:320px;height:320px;left:-120px;top:-100px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>19 / 19 · Bases del desafío</span></div>
+
+      <div class="bases-grid">
+        <div>
+          <span class="pill" style="border:1px solid var(--ink);color:var(--ink);margin-bottom:24px;">
+            <span class="sq" style="background:var(--terra);"></span>Challenge · Bases
+          </span>
+          <h2>Bases y<br><em>objetivos</em>.</h2>
+          <p class="lede">Reglas, criterios y entrega del challenge final junto a <b>Galo</b>. Aplicá lo trabajado durante el workshop a un caso real, en formato individual o por equipo.</p>
+        </div>
+        <div class="bases-list">
+          <div class="row"><span class="n">01</span><div><h4>Objetivo del desafío</h4><p>[ Por desarrollar ] · Descripción breve del problema y del resultado esperado.</p></div></div>
+          <div class="row"><span class="n">02</span><div><h4>Modalidad de entrega</h4><p>[ Por desarrollar ] · Formato, plataforma de entrega y horario límite del mismo día.</p></div></div>
+          <div class="row"><span class="n">03</span><div><h4>Criterios de evaluación</h4><p>[ Por desarrollar ] · Qué se evalúa: claridad, uso de Claude + Obsidian, originalidad.</p></div></div>
+          <div class="row"><span class="n">04</span><div><h4>Premios y reconocimientos</h4><p>[ Por desarrollar ] · Detalle de premios y <b>sorteo de cuentas de Claude</b>.</p></div></div>
+          <div class="row"><span class="n">05</span><div><h4>Mentoreo y consultas</h4><p>[ Por desarrollar ] · Cómo y cuándo consultar a los mentores durante y después del evento.</p></div></div>
+        </div>
+      </div>
+
+      <div class="footbar on-cream" style="margin-top:24px;">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.jpeg" alt="Galo"><span class="sep"></span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div>
+      </div>
+    </div>
+  </section>
+
+</deck-stage>
+
+
+</body></html>
