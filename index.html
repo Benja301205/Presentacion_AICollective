@@ -105,10 +105,11 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;}
 .footbar .host img{height:34px;width:auto;display:block;}
 .footbar .host .xpl-chip{display:inline-flex;align-items:center;justify-content:center;
-  width:38px;height:38px;border-radius:8px;border:2px solid #8b5cf6;
-  background:rgba(124,28,138,0.10);flex-shrink:0;}
-.footbar.on-dark .host .xpl-chip{background:rgba(139,92,246,0.18);}
-.footbar .host .xpl-chip img{width:22px;height:22px;display:block;}
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(255,255,255,0.92);flex-shrink:0;}
+.footbar.on-cream .host .xpl-chip{background:transparent;}
+.footbar.on-cream .host .xpl-chip img{mix-blend-mode:multiply;}
+.footbar .host .xpl-chip img{width:20px;height:20px;display:block;}
 .footbar .host .plus{font-family:var(--mono);font-size:22px;color:var(--mute-on-cream);font-weight:400;}
 .footbar.on-dark .host .plus{color:var(--mute-on-dark);}
 .footbar .host .lbl{color:var(--mute-on-cream);}
@@ -132,8 +133,8 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .hero-brand img.aic{height:72px;width:auto;display:block;}
 .hero-brand .x{font-family:var(--display);font-style:italic;font-size:46px;color:var(--orange);line-height:1;}
 .hero-brand .xpl-chip{display:inline-flex;align-items:center;justify-content:center;
-  width:64px;height:64px;border-radius:14px;border:2px solid #8b5cf6;
-  background:rgba(124,28,138,0.18);}
+  width:64px;height:64px;border-radius:14px;
+  background:rgba(255,255,255,0.92);}
 .hero-brand .xpl-chip img{width:38px;height:38px;display:block;}
 .hero-brand .copres{display:flex;flex-direction:column;gap:4px;
   font-family:var(--mono);font-size:20px;text-transform:uppercase;letter-spacing:0.14em;color:var(--mute-on-dark);}
@@ -164,12 +165,12 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .hero-meta-row .val em{color:var(--orange);font-style:italic;}
 
 /* ============ SLIDE 02 — AI Collective duotone ============ */
-.aic-wrap{height:100%;display:grid;grid-template-rows:auto 1fr auto;}
+.aic-wrap{height:100%;display:flex;flex-direction:column;}
 .aic-head{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;color:#fff;
   font-family:var(--mono);font-size:22px;letter-spacing:0.18em;text-transform:uppercase;}
 .aic-head .mark{display:inline-flex;align-items:center;gap:12px;font-weight:700;}
 .aic-head .mark .dot{width:12px;height:12px;border-radius:50%;background:#fff;}
-.aic-hero{position:relative;display:grid;grid-template-columns:0.95fr 1.05fr;gap:60px;align-items:center;padding:30px 0;}
+.aic-hero{position:relative;display:grid;grid-template-columns:0.95fr 1.05fr;gap:60px;align-items:center;padding:30px 0;flex:1;}
 .aic-hero .left{position:relative;display:flex;flex-direction:column;gap:30px;justify-content:center;color:#fff;}
 .aic-hero .eyebrow{font-family:var(--mono);font-size:22px;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:14px;}
 .aic-hero .eyebrow .sq{width:14px;height:14px;background:#fff;}
@@ -222,12 +223,12 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .xpl-hero .lede{margin:0;font-size:19px;line-height:1.5;color:rgba(255,255,255,0.95);max-width:480px;}
 .xpl-hero .lede b{color:var(--orange);font-weight:800;}
 .xpl-hero .right{position:relative;display:flex;align-items:center;justify-content:center;}
-.xpl-compass{width:300px;height:300px;display:flex;align-items:center;justify-content:center;position:relative;}
-.xpl-compass img{width:210px;height:auto;display:block;filter:drop-shadow(0 20px 50px rgba(0,0,0,0.35));position:relative;z-index:2;}
-.xpl-compass::before{content:"";position:absolute;inset:0;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,112,51,0.35) 0%,rgba(255,112,51,0.0) 60%);z-index:0;}
-.xpl-compass::after{content:"";position:absolute;width:88%;height:88%;border-radius:50%;
-  border:1.5px dashed rgba(255,255,255,0.3);z-index:1;}
+.xpl-compass{width:300px;height:300px;display:flex;align-items:center;justify-content:center;position:relative;
+  background:rgba(255,255,255,0.95);border-radius:50%;box-shadow:0 20px 60px rgba(0,0,0,0.28);}
+.xpl-compass img{width:210px;height:auto;display:block;position:relative;z-index:2;mix-blend-mode:multiply;}
+.xpl-compass::before{display:none;}
+.xpl-compass::after{content:"";position:absolute;width:100%;height:100%;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,0.55);transform:scale(1.12);z-index:-1;}
 .xpl-three{display:grid;grid-template-columns:repeat(3,1fr);gap:0;flex-shrink:0;border-top:1px solid var(--rule-on-dark);padding-top:16px;color:#fff;}
 .xpl-three .col{padding-right:36px;border-right:1px solid var(--rule-on-dark);display:flex;flex-direction:column;gap:8px;}
 .xpl-three .col:last-child{border-right:none;}
@@ -318,6 +319,16 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute-on-cream);}
 .brand-stamp img{height:24px;width:auto;}
 .brand-stamp img.anth-icon{height:22px;}
+
+/* ============ Logos: quitar fondo blanco en contextos claros ============ */
+.footbar.on-cream .partners img{mix-blend-mode:multiply;}
+.session-divider .sp-role img{mix-blend-mode:multiply;}
+.brand-stamp img{mix-blend-mode:multiply;}
+.logo-card img{mix-blend-mode:multiply;}
+/* Logos invertidos a blanco en slides oscuras (galo/anth en dark footbar) */
+.footbar.on-dark .partners img.galo,
+.footbar.on-dark .partners img.anth-icon,
+.footbar.on-dark .partners img.anth{filter:brightness(0) invert(1);opacity:0.92;}
 </style>
 </head>
 <body style="">
@@ -380,9 +391,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
             <span class="lbl">Aliados</span>
             <img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic">
             <span class="sep"></span>
-            <img class="galo" src="assets/logo-galo.jpeg" alt="Galo">
-            <span class="sep"></span>
-            <img class="xplora" src="assets/logo-xplora.jpeg" alt="Xplora UCEMA">
+            <img class="galo" src="assets/logo-galo.png" alt="Galo">
           </div>
         </div>
       </div>
@@ -426,6 +435,18 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
             <span class="num">03 · Stack</span>
             <h4>Herramientas reales</h4>
             <p>Claude, Obsidian, agents y MCP — siempre desde casos de uso productivos.</p>
+          </div>
+        </div>
+        <div class="footbar on-dark">
+          <div class="host">
+            <img src="assets/logo-aicollective-white.webp" alt="The AI Collective">
+            <span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span>
+          </div>
+          <div class="partners">
+            <span class="lbl">Aliados</span>
+            <img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic">
+            <span class="sep"></span>
+            <img class="galo" src="assets/logo-galo.png" alt="Galo">
           </div>
         </div>
       </div>
@@ -479,6 +500,18 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
             <p>Conectá con +1.000 founders, devs y curiosos de Buenos Aires.</p>
           </div>
         </div>
+        <div class="footbar on-dark">
+          <div class="host">
+            <img src="assets/logo-aicollective-white.webp" alt="The AI Collective">
+            <span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span>
+          </div>
+          <div class="partners">
+            <span class="lbl">Aliados</span>
+            <img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic">
+            <span class="sep"></span>
+            <img class="galo" src="assets/logo-galo.png" alt="Galo">
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -501,7 +534,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
           </div>
           <div class="right">
             <div class="xpl-compass">
-              <img src="assets/logo-xplora.jpeg" alt="Xplora">
+              <img src="assets/logo-xplora.png" alt="Xplora">
             </div>
           </div>
         </div>
@@ -518,6 +551,18 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
           <div class="col">
             <span class="k">Misión</span>
             <span class="v"><em>Explorá</em> el futuro<br>de la educación + IA.</span>
+          </div>
+        </div>
+        <div class="footbar on-dark">
+          <div class="host">
+            <img src="assets/logo-aicollective-white.webp" alt="The AI Collective">
+            <span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span>
+          </div>
+          <div class="partners">
+            <span class="lbl">Aliados</span>
+            <img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic">
+            <span class="sep"></span>
+            <img class="galo" src="assets/logo-galo.png" alt="Galo">
           </div>
         </div>
       </div>
@@ -547,7 +592,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         </div>
         <div class="tier-row-2">
           <div class="logo-card tall"><img class="aic" src="assets/logo-aicollective-full.png" alt="The AI Collective"><span class="lbl">The AI Collective BA</span></div>
-          <div class="logo-card tall"><img class="xplora" src="assets/logo-xplora.jpeg" alt="Xplora UCEMA"><span class="lbl">Xplora · UCEMA</span></div>
+          <div class="logo-card tall"><img class="xplora" src="assets/logo-xplora.png" alt="Xplora UCEMA"><span class="lbl">Xplora · UCEMA</span></div>
         </div>
       </div>
 
@@ -558,14 +603,14 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
           <span class="meta">Charla &amp; Challenge</span>
         </div>
         <div class="tier-row-2">
-          <div class="logo-card"><img class="anth" src="assets/logo-anthropic.png" alt="Anthropic" style="width: 300px; height: 200px"><span class="lbl">Anthropic · Charla introductoria</span></div>
-          <div class="logo-card"><img class="galo" src="assets/logo-galo.jpeg" alt="Galo"><span class="lbl">Galo · Challenge final</span></div>
+          <div class="logo-card"><img class="anth" src="assets/logo-anthropic.png" alt="Anthropic"><span class="lbl">Anthropic · Charla introductoria</span></div>
+          <div class="logo-card"><img class="galo" src="assets/logo-galo.png" alt="Galo"><span class="lbl">Galo · Challenge final</span></div>
         </div>
       </div>
 
       <div class="footbar on-cream" style="margin-top:24px;">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div>
-        <div class="partners"><span class="lbl">Aliados</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><img class="galo" src="assets/logo-galo.jpeg" alt="Galo"></div>
+        <div class="partners"><span class="lbl">Aliados</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><img class="galo" src="assets/logo-galo.png" alt="Galo"></div>
       </div>
     </div>
   </section>
@@ -758,15 +803,15 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         <div class="left">
           <div class="num-block"><span class="big">04</span><span class="lbl">Presentación del desafío</span></div>
           <h1>El <em>desafío</em><br>Galo.</h1>
-          <span class="brand-stamp"><img src="assets/logo-galo.jpeg" alt="Galo"></span>
+          <span class="brand-stamp"><img src="assets/logo-galo.png" alt="Galo"></span>
         </div>
         <div class="speaker-card">
-          <span class="sp-role"><img src="assets/logo-galo.jpeg" alt="Galo"> Challenge final · Galo</span>
+          <span class="sp-role"><img src="assets/logo-galo.png" alt="Galo"> Challenge final · Galo</span>
           <h3 class="sp-name">Franco<br><em>Pesce.</em></h3>
           <p class="sp-bio"><b>CTO de Galo</b>. Lidera el diseño del desafío y el mentoreo en vivo. Cuenta el contexto del problema y las reglas de juego antes del trabajo en sala.</p>
         </div>
       </div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.jpeg" alt="Galo"></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.png" alt="Galo"></div></div>
     </div>
   </section>
 
@@ -796,7 +841,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 
       <div class="footbar on-cream" style="margin-top:24px;">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora-mark.png" alt="Xplora · UCEMA"></span></div>
-        <div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.jpeg" alt="Galo"><span class="sep"></span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div>
+        <div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.png" alt="Galo"><span class="sep"></span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div>
       </div>
     </div>
   </section>
