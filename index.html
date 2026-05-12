@@ -120,7 +120,34 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .footbar .partners .sep{width:1px;height:24px;background:currentColor;opacity:0.25;}
 
 /* ============ SLIDE 01 — HERO ============ */
-.hero{display:grid;grid-template-rows:auto 1fr auto auto;gap:0;height:100%;}
+.bg-hero{background:#0a1322;color:var(--cream);overflow:hidden;}
+.bg-hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 1500px 1100px at 88% 52%,rgba(255,112,51,0.36) 0%,rgba(255,112,51,0) 56%),
+  radial-gradient(ellipse 900px 700px at 14% 26%,rgba(0,118,219,0.20) 0%,rgba(0,118,219,0) 62%),
+  radial-gradient(circle 900px at 55% 105%,rgba(58,13,140,0.24) 0%,rgba(58,13,140,0) 70%);
+  pointer-events:none;z-index:0;}
+.bg-hero::after{content:"";position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(0deg,transparent 0 38px,rgba(255,255,255,0.025) 38px 39px),
+    repeating-linear-gradient(90deg,transparent 0 38px,rgba(255,255,255,0.025) 38px 39px);
+  pointer-events:none;z-index:1;mix-blend-mode:overlay;}
+.hero-graph{position:absolute;top:-40px;right:-160px;width:1080px;height:1080px;
+  pointer-events:none;z-index:1;opacity:0.7;}
+.hero-graph .edge{stroke:rgba(255,135,80,0.42);stroke-width:1;fill:none;}
+.hero-graph .edge.bright{stroke:rgba(255,175,120,0.72);stroke-width:1.6;}
+.hero-graph .node{fill:#ff7033;}
+.hero-graph .node.bright{fill:#ffcfa8;}
+.hero-graph .node.dim{fill:rgba(255,255,255,0.55);}
+.hero-graph .node-halo{fill:rgba(255,112,51,0.18);}
+.hero-aurora{position:absolute;right:-200px;top:42%;width:780px;height:780px;
+  border-radius:50%;
+  background:radial-gradient(circle at center,rgba(255,112,51,0.55) 0%,rgba(255,112,51,0) 60%);
+  filter:blur(36px);pointer-events:none;z-index:0;}
+.hero-mono-stamp{position:absolute;left:var(--pad-x);bottom:calc(var(--pad-bottom) + 96px);
+  font-family:var(--mono);font-size:14px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(255,255,255,0.42);
+  display:flex;align-items:center;gap:14px;z-index:3;}
+.hero-mono-stamp::before{content:"";width:48px;height:1px;background:rgba(255,255,255,0.32);}
+.hero{display:grid;grid-template-rows:auto 1fr auto auto;gap:0;height:100%;position:relative;z-index:2;}
 .hero-brand{display:flex;align-items:center;gap:30px;
   padding-bottom:24px;border-bottom:1px solid var(--rule-on-dark);}
 .hero-brand img.aic{height:72px;width:auto;display:block;}
@@ -137,13 +164,15 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   font-family:var(--mono);font-size:20px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;}
 .hero-body{display:grid;grid-template-columns:0.85fr 1.5fr;gap:60px;align-items:end;padding:56px 0 32px;}
 .hero-date{display:flex;flex-direction:column;gap:14px;}
-.hero-date .eyebrow{font-family:var(--mono);font-size:20px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);}
-.hero-date .big{font-family:var(--display);font-size:300px;line-height:0.82;color:var(--cream);letter-spacing:-0.04em;}
+.hero-date .eyebrow{font-family:var(--mono);font-size:18px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);}
+.hero-date .big{font-family:var(--display);font-size:210px;line-height:0.82;color:var(--cream);letter-spacing:-0.04em;}
 .hero-date .big em{color:var(--orange);font-style:italic;}
-.hero-date .sub{font-family:var(--mono);font-size:22px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute-on-dark);margin-top:8px;}
+.hero-date .sub{font-family:var(--mono);font-size:19px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute-on-dark);margin-top:8px;}
 .hero-headline{position:relative;}
-.hero-headline .kicker{font-family:var(--mono);font-size:24px;letter-spacing:0.22em;text-transform:uppercase;color:var(--orange);margin-bottom:18px;font-weight:700;}
-.hero-headline h1{margin:0;font-family:var(--display);font-weight:400;font-size:172px;line-height:0.84;letter-spacing:-0.025em;color:var(--cream);}
+.hero-headline .kicker{font-family:var(--mono);font-size:21px;letter-spacing:0.22em;text-transform:uppercase;color:var(--orange);margin-bottom:18px;font-weight:700;}
+.hero-headline h1{margin:0;font-family:var(--display);font-weight:400;font-size:120px;line-height:0.88;letter-spacing:-0.028em;color:var(--cream);text-shadow:0 4px 38px rgba(0,0,0,0.3);}
+.hero-headline h1 .small{display:block;font-size:0.74em;color:rgba(244,243,238,0.92);}
+.hero-headline h1 .big-em{display:inline-block;color:var(--orange);font-style:italic;letter-spacing:-0.03em;}
 .hero-headline h1 em{color:var(--orange);font-style:italic;}
 .hero-headline .stack{margin-top:24px;display:inline-flex;align-items:center;gap:14px;
   padding:10px 20px;border:1.5px solid var(--orange);border-radius:999px;
@@ -167,15 +196,15 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .aic-hero .left{position:relative;display:flex;flex-direction:column;gap:30px;justify-content:center;color:#fff;}
 .aic-hero .eyebrow{font-family:var(--mono);font-size:22px;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:14px;}
 .aic-hero .eyebrow .sq{width:14px;height:14px;background:#fff;}
-.aic-hero h1{margin:0;font-family:var(--display);font-weight:400;font-size:118px;line-height:0.92;letter-spacing:-0.025em;color:#fff;}
+.aic-hero h1{margin:0;font-family:var(--display);font-weight:400;font-size:104px;line-height:0.94;letter-spacing:-0.025em;color:#fff;}
 .aic-hero h1 em{font-style:italic;color:#ff7033;}
-.aic-hero .lede{margin:0;font-size:30px;line-height:1.4;color:rgba(255,255,255,0.95);max-width:720px;}
+.aic-hero .lede{margin:0;font-size:26px;line-height:1.45;color:rgba(255,255,255,0.95);max-width:720px;}
 .aic-hero .lede b{font-weight:800;}
 .aic-hero .right{position:relative;display:flex;align-items:center;justify-content:center;}
-.aic-mono{width:520px;height:520px;border-radius:50%;background:rgba(255,255,255,0.96);
+.aic-mono{width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,0.96);
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 30px 80px rgba(0,0,0,0.18);position:relative;z-index:1;}
-.aic-mono img{width:380px;height:auto;display:block;}
+.aic-mono img{width:280px;height:auto;display:block;}
 .aic-mono::before{content:"";position:absolute;width:100%;height:100%;border-radius:50%;
   border:1.5px solid rgba(255,255,255,0.45);transform:scale(1.12);z-index:-1;}
 .aic-mono::after{content:"";position:absolute;width:100%;height:100%;border-radius:50%;
@@ -195,7 +224,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .qr-cta .qr-label{font-family:var(--mono);font-size:22px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);font-weight:700;}
 .qr-cta .qr-meta{font-family:var(--mono);font-size:17px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.72);}
 .qr-frame{display:flex;flex-direction:column;align-items:center;gap:20px;}
-.qr-slot{width:560px;height:560px;background:transparent;
+.qr-slot{width:460px;height:460px;background:transparent;
   display:flex;align-items:center;justify-content:center;position:relative;}
 .qr-slot::before{display:none;}
 .qr-slot img{width:100%;height:100%;object-fit:contain;display:block;
@@ -208,7 +237,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .xpl-hero .left{display:flex;flex-direction:column;gap:18px;}
 .xpl-hero .eyebrow{font-family:var(--mono);font-size:22px;letter-spacing:0.22em;text-transform:uppercase;color:#fff;font-weight:700;display:flex;align-items:center;gap:14px;}
 .xpl-hero .eyebrow .sq{width:14px;height:14px;background:var(--orange);}
-.xpl-hero h1{margin:0;font-family:var(--display);font-weight:400;font-size:84px;line-height:0.96;letter-spacing:-0.02em;color:#fff;}
+.xpl-hero h1{margin:0;font-family:var(--display);font-weight:400;font-size:140px;line-height:0.92;letter-spacing:-0.025em;color:#fff;}
 .xpl-hero h1 em{font-style:italic;color:var(--orange);}
 .xpl-hero .tag{font-family:var(--mono);font-size:18px;letter-spacing:0.18em;text-transform:uppercase;color:#d5c5f0;font-weight:600;}
 .xpl-hero .lede{margin:0;font-size:19px;line-height:1.5;color:rgba(255,255,255,0.95);max-width:580px;}
@@ -226,11 +255,44 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .xpl-three .k{font-family:var(--mono);font-size:15px;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);font-weight:700;}
 .xpl-three .v{font-family:var(--display);font-size:20px;line-height:1.25;color:#fff;}
 
+/* ============ SLIDE Xplora Legacy — past speakers ============ */
+.xpl-legacy{flex:1;display:flex;flex-direction:column;gap:24px;min-height:0;}
+.xpl-legacy .lg-head{display:flex;align-items:flex-end;justify-content:space-between;gap:60px;margin-top:8px;}
+.xpl-legacy .lg-head h2{margin:0;font-family:var(--display);font-weight:400;font-size:78px;line-height:0.96;letter-spacing:-0.02em;color:#fff;max-width:1100px;}
+.xpl-legacy .lg-head h2 em{font-style:italic;color:var(--orange);}
+.xpl-legacy .lg-head .kicker{max-width:480px;font-size:20px;line-height:1.5;color:rgba(255,255,255,0.92);margin:0;}
+.xpl-legacy .lg-head .kicker b{color:var(--orange);font-weight:800;}
+
+.xpl-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid rgba(255,255,255,0.22);border-bottom:1px solid rgba(255,255,255,0.22);
+  padding:20px 0;color:#fff;}
+.xpl-stats .col{padding-right:36px;border-right:1px solid rgba(255,255,255,0.22);display:flex;flex-direction:column;gap:4px;}
+.xpl-stats .col:last-child{border-right:none;}
+.xpl-stats .n{font-family:var(--display);font-size:78px;line-height:0.9;color:var(--orange);letter-spacing:-0.02em;}
+.xpl-stats .l{font-family:var(--mono);font-size:16px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.78);font-weight:600;}
+
+.xpl-speakers{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;min-height:0;}
+.xpl-speakers .sp{position:relative;display:flex;flex-direction:column;
+  border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.04);
+  padding:24px 24px 22px;overflow:hidden;}
+.xpl-speakers .sp.feature{background:linear-gradient(165deg,rgba(255,112,51,0.22) 0%,rgba(255,255,255,0.04) 80%);border-color:rgba(255,112,51,0.45);}
+.xpl-speakers .sp .yr{font-family:var(--mono);font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);font-weight:700;}
+.xpl-speakers .sp .name{margin:18px 0 0;font-family:var(--display);font-weight:400;font-size:46px;line-height:0.95;color:#fff;letter-spacing:-0.015em;}
+.xpl-speakers .sp .name em{font-style:italic;color:var(--orange);}
+.xpl-speakers .sp .role{margin-top:auto;padding-top:22px;border-top:1px solid rgba(255,255,255,0.18);
+  font-size:16px;line-height:1.4;color:rgba(255,255,255,0.85);}
+.xpl-speakers .sp .role b{color:#fff;font-weight:700;}
+.xpl-speakers .sp .plus{display:flex;align-items:center;justify-content:center;flex:1;
+  font-family:var(--display);font-style:italic;font-size:140px;color:var(--orange);opacity:0.55;line-height:1;}
+.xpl-speakers .sp.more{background:transparent;border-style:dashed;border-color:rgba(255,255,255,0.28);}
+.xpl-speakers .sp.more .yr{color:rgba(255,255,255,0.6);}
+.xpl-speakers .sp.more .role{color:rgba(255,255,255,0.6);border-color:rgba(255,255,255,0.18);}
+
 /* ============ SLIDE 04 — Anfitriones y Aliados ============ */
 .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:60px;margin:10px 0 12px;}
-.section-head h2{margin:0;font-family:var(--display);font-weight:400;font-size:72px;line-height:0.96;letter-spacing:-0.02em;color:var(--ink);max-width:1100px;}
+.section-head h2{margin:0;font-family:var(--display);font-weight:400;font-size:60px;line-height:0.98;letter-spacing:-0.02em;color:var(--ink);max-width:1100px;}
 .section-head h2 em{color:var(--terra);font-style:italic;}
-.section-head .kicker{max-width:540px;font-size:24px;line-height:1.45;color:#3b322c;margin:0;}
+.section-head .kicker{max-width:540px;font-size:20px;line-height:1.5;color:#3b322c;margin:0;}
 .section-head .kicker b{color:var(--terra);font-weight:700;}
 
 .sponsors-tier{margin-top:8px;}
@@ -253,20 +315,20 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .tier-row-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 
 /* ============ Speaker session divider ============ */
-.session-divider{flex:1;display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:end;padding-top:40px;}
-.session-divider .left{display:flex;flex-direction:column;gap:36px;}
-.session-divider .num-block{font-family:var(--mono);font-size:22px;color:var(--terra);letter-spacing:0.16em;text-transform:uppercase;
+.session-divider{flex:1;display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center;padding:24px 0;}
+.session-divider .left{display:flex;flex-direction:column;gap:26px;}
+.session-divider .num-block{font-family:var(--mono);font-size:20px;color:var(--terra);letter-spacing:0.16em;text-transform:uppercase;
   display:flex;align-items:center;gap:18px;}
-.session-divider .num-block .big{font-family:var(--display);font-size:84px;color:var(--navy);letter-spacing:-0.02em;line-height:1;}
+.session-divider .num-block .big{font-family:var(--display);font-size:72px;color:var(--navy);letter-spacing:-0.02em;line-height:1;}
 .session-divider .num-block .lbl{color:var(--ink);font-weight:700;}
-.session-divider h1{margin:0;font-family:var(--display);font-weight:400;font-size:128px;line-height:0.92;color:var(--ink);letter-spacing:-0.02em;}
+.session-divider h1{margin:0;font-family:var(--display);font-weight:400;font-size:104px;line-height:0.94;color:var(--ink);letter-spacing:-0.02em;}
 .session-divider h1 em{color:var(--terra);font-style:italic;}
-.session-divider .speaker-card{display:flex;flex-direction:column;gap:18px;border-top:1px solid var(--rule-on-cream);padding-top:28px;}
-.session-divider .sp-role{font-family:var(--mono);font-size:20px;color:var(--terra);letter-spacing:0.14em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:14px;}
-.session-divider .sp-role img{height:26px;width:auto;}
-.session-divider .sp-name{margin:0;font-family:var(--display);font-size:80px;line-height:0.92;color:var(--ink);}
+.session-divider .speaker-card{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--rule-on-cream);padding-top:22px;}
+.session-divider .sp-role{font-family:var(--mono);font-size:18px;color:var(--terra);letter-spacing:0.14em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:14px;}
+.session-divider .sp-role img{height:24px;width:auto;}
+.session-divider .sp-name{margin:0;font-family:var(--display);font-size:64px;line-height:0.94;color:var(--ink);}
 .session-divider .sp-name em{color:var(--terra);font-style:italic;}
-.session-divider .sp-bio{margin:0;font-size:24px;line-height:1.45;color:#3b322c;}
+.session-divider .sp-bio{margin:0;font-size:20px;line-height:1.45;color:#3b322c;}
 .session-divider .sp-bio b{color:var(--ink);font-weight:700;}
 .session-divider .right-portrait{height:100%;min-height:520px;
   background:radial-gradient(circle at 32% 32%,var(--terra) 0,transparent 55%),
@@ -279,30 +341,41 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .session-divider .right-portrait .partner-stamp.galo img{filter:brightness(0) invert(1);}
 
 /* ============ Content placeholder ============ */
-.content-placeholder{flex:1;display:flex;flex-direction:column;gap:40px;padding-top:32px;}
+.content-placeholder{flex:1;display:flex;flex-direction:column;gap:28px;padding-top:24px;}
 .content-placeholder .ph-eyebrow{display:flex;align-items:center;gap:14px;
-  font-family:var(--mono);font-size:20px;color:var(--navy);letter-spacing:0.16em;text-transform:uppercase;font-weight:700;}
+  font-family:var(--mono);font-size:18px;color:var(--navy);letter-spacing:0.16em;text-transform:uppercase;font-weight:700;}
 .content-placeholder .ph-eyebrow .sq{width:14px;height:14px;background:var(--navy);}
 .content-placeholder .ph-eyebrow .meta{color:var(--mute-on-cream);font-weight:500;}
-.content-placeholder h2{margin:0;font-family:var(--display);font-weight:400;font-size:104px;line-height:0.94;color:var(--ink);letter-spacing:-0.01em;max-width:1480px;}
+.content-placeholder h2{margin:0;font-family:var(--display);font-weight:400;font-size:84px;line-height:0.96;color:var(--ink);letter-spacing:-0.01em;max-width:1480px;}
 .content-placeholder h2 em{color:var(--terra);font-style:italic;}
-.content-placeholder .slot{flex:1;border:1.5px dashed var(--terra);background:rgba(193,95,60,0.04);
-  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:var(--terra);}
+.content-placeholder .slot{flex:1;display:grid;grid-template-columns:1.45fr 1fr;grid-template-rows:1fr 1fr;gap:16px;}
+.content-placeholder .slot .block{border:1.25px dashed var(--terra);background:rgba(193,95,60,0.04);
+  padding:26px 30px;display:flex;flex-direction:column;gap:12px;overflow:hidden;}
+.content-placeholder .slot .block.lead{grid-row:1 / span 2;gap:16px;background:rgba(193,95,60,0.06);padding:30px 34px;}
+.content-placeholder .slot .block.lead h4{margin-top:auto;}
+.content-placeholder .slot .block .tag{display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:var(--terra);font-weight:700;}
+.content-placeholder .slot .block .tag::before{content:"";width:10px;height:10px;background:var(--terra);}
+.content-placeholder .slot .block h4{margin:0;font-family:var(--display);font-weight:400;font-size:38px;line-height:0.98;color:var(--ink);letter-spacing:-0.01em;}
+.content-placeholder .slot .block.lead h4{font-size:60px;}
+.content-placeholder .slot .block h4 em{color:var(--terra);font-style:italic;}
+.content-placeholder .slot .block p{margin:0;font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.35;color:var(--mute-on-cream);}
+.content-placeholder .slot .block.lead p{font-size:26px;max-width:520px;}
 .content-placeholder .slot .slot-mark{font-family:var(--mono);font-size:22px;letter-spacing:0.2em;text-transform:uppercase;opacity:0.85;}
 .content-placeholder .slot .slot-hint{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--mute-on-cream);max-width:720px;text-align:center;line-height:1.3;}
 
 /* ============ Bases ============ */
 .bases-grid{flex:1;display:grid;grid-template-columns:1fr 1.05fr;gap:80px;padding-top:32px;}
-.bases-grid h2{margin:0 0 24px;font-family:var(--display);font-weight:400;font-size:96px;line-height:0.94;color:var(--ink);letter-spacing:-0.01em;}
+.bases-grid h2{margin:0 0 24px;font-family:var(--display);font-weight:400;font-size:80px;line-height:0.96;color:var(--ink);letter-spacing:-0.01em;}
 .bases-grid h2 em{color:var(--terra);font-style:italic;}
-.bases-grid .lede{margin:0;font-size:26px;line-height:1.45;color:#3b322c;max-width:540px;}
+.bases-grid .lede{margin:0;font-size:22px;line-height:1.5;color:#3b322c;max-width:540px;}
 .bases-grid .lede b{color:var(--ink);font-weight:700;}
 .bases-list{display:flex;flex-direction:column;}
 .bases-list .row{display:grid;grid-template-columns:74px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--rule-on-cream);align-items:baseline;}
 .bases-list .row:last-child{border-bottom:1px solid var(--rule-on-cream);}
 .bases-list .n{font-family:var(--mono);font-size:24px;color:var(--navy);font-weight:700;letter-spacing:0.1em;}
-.bases-list h4{margin:0 0 6px;font-family:var(--display);font-weight:400;font-size:36px;color:var(--ink);}
-.bases-list p{margin:0;font-size:22px;line-height:1.45;color:#3b322c;}
+.bases-list h4{margin:0 0 6px;font-family:var(--display);font-weight:400;font-size:30px;color:var(--ink);}
+.bases-list p{margin:0;font-size:19px;line-height:1.5;color:#3b322c;}
 .bases-list p b{color:var(--ink);font-weight:700;}
 .pill{display:inline-flex;align-items:center;gap:12px;padding:10px 18px;border-radius:999px;
   font-family:var(--mono);font-size:18px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;}
@@ -346,7 +419,56 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 <deck-stage width="1920" height="1080" style="--deck-rail-w: 188px;">
 
   <!-- ============ SLIDE 01 — HERO ============ -->
-  <section class="bg-navy">
+  <section class="bg-hero">
+    <div class="hero-aurora"></div>
+    <svg class="hero-graph" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="haloG" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff7033" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#ff7033" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g class="edges">
+        <path class="edge bright" d="M 460 200 C 540 240, 580 320, 540 380"/>
+        <path class="edge bright" d="M 540 380 C 600 420, 720 380, 780 460"/>
+        <path class="edge" d="M 540 380 C 460 460, 380 480, 320 540"/>
+        <path class="edge" d="M 320 540 C 260 600, 280 720, 380 760"/>
+        <path class="edge bright" d="M 540 380 C 620 480, 680 580, 660 680"/>
+        <path class="edge" d="M 660 680 C 720 740, 820 740, 880 660"/>
+        <path class="edge" d="M 460 200 C 360 200, 260 240, 220 320"/>
+        <path class="edge" d="M 220 320 C 160 380, 140 460, 200 520"/>
+        <path class="edge" d="M 200 520 C 240 620, 320 660, 380 760"/>
+        <path class="edge" d="M 780 460 C 820 540, 860 580, 880 660"/>
+        <path class="edge" d="M 460 200 C 520 140, 660 160, 720 240"/>
+        <path class="edge" d="M 720 240 C 800 280, 820 360, 780 460"/>
+        <path class="edge" d="M 540 380 C 480 360, 420 360, 380 400"/>
+        <path class="edge" d="M 380 400 C 320 440, 320 500, 320 540"/>
+        <path class="edge" d="M 660 680 C 580 700, 480 720, 380 760"/>
+        <path class="edge" d="M 380 760 C 360 820, 380 880, 460 900"/>
+        <path class="edge" d="M 460 900 C 540 920, 620 880, 660 820"/>
+        <path class="edge" d="M 660 820 C 720 780, 720 720, 660 680"/>
+      </g>
+      <g class="nodes">
+        <circle class="node-halo" cx="540" cy="380" r="32"/>
+        <circle class="node-halo" cx="780" cy="460" r="24"/>
+        <circle class="node-halo" cx="660" cy="680" r="22"/>
+        <circle class="node bright" cx="540" cy="380" r="9"/>
+        <circle class="node bright" cx="780" cy="460" r="7"/>
+        <circle class="node bright" cx="660" cy="680" r="7"/>
+        <circle class="node" cx="460" cy="200" r="5"/>
+        <circle class="node" cx="320" cy="540" r="5"/>
+        <circle class="node" cx="380" cy="760" r="5"/>
+        <circle class="node" cx="880" cy="660" r="5"/>
+        <circle class="node" cx="220" cy="320" r="4"/>
+        <circle class="node" cx="200" cy="520" r="4"/>
+        <circle class="node" cx="720" cy="240" r="4"/>
+        <circle class="node" cx="380" cy="400" r="4"/>
+        <circle class="node dim" cx="460" cy="900" r="3"/>
+        <circle class="node dim" cx="660" cy="820" r="3"/>
+        <circle class="node dim" cx="820" cy="740" r="3"/>
+        <circle class="node dim" cx="160" cy="380" r="3"/>
+      </g>
+    </svg>
     <div class="frame">
       <div class="hero">
         <div class="hero-brand">
@@ -416,7 +538,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       <div class="aic-wrap">
         <div class="aic-head">
           <span class="mark"><span class="dot"></span>&nbsp;The AI Collective · Buenos Aires</span>
-          <span>02 / 19 · Comunidad</span>
+          <span>02 / 20 · Comunidad</span>
         </div>
 
         <div class="aic-hero">
@@ -473,7 +595,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       <div class="aic-wrap">
         <div class="aic-head">
           <span class="mark"><span class="dot"></span>&nbsp;Sumate · The AI Collective</span>
-          <span>03 / 19 · Networking</span>
+          <span>03 / 20 · Networking</span>
         </div>
 
         <div class="aic-hero">
@@ -536,16 +658,15 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="xpl-wrap">
         <div class="topbar on-dark" style="color:rgba(255,255,255,0.7);">
-          <span class="mark" style="color:#fff;"><span class="dot" style="background:var(--orange);"></span>&nbsp;Workshop · Claude + Obsidian</span>
-          <span>04 / 19 · Co-host</span>
+          <span class="mark" style="color:#fff;"><span class="dot" style="background:var(--orange);"></span>&nbsp;Xplora · UCEMA</span>
+          <span>04 / 20 · Co-host</span>
         </div>
 
         <div class="xpl-hero">
           <div class="left">
-            <span class="eyebrow"><span class="sq"></span>Co-host &amp; sede</span>
-            <span class="tag">Xplora · UCEMA</span>
-            <h1>Donde la<br><em>innovación</em><br>se explora.</h1>
-            <p class="lede"><b>Xplora</b> es la iniciativa de innovación de <b>UCEMA</b> que abre sus aulas a comunidades, builders y empresas. Pone la <b>sede, el ecosistema académico y la red</b> para que el workshop pase del aula al impacto real.</p>
+            <span class="eyebrow"><span class="sq"></span>Co-host del workshop</span>
+            <h1><em>Xplora</em><br>UCEMA.</h1>
+            <p class="lede"><b>Xplora</b> es la iniciativa de innovación de <b>UCEMA</b> que abre sus aulas a comunidades, builders y empresas. Pone el <b>ecosistema académico y la red</b> para que el workshop pase del aula al impacto real.</p>
           </div>
           <div class="right">
             <div class="xpl-compass">
@@ -556,16 +677,16 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 
         <div class="xpl-three">
           <div class="col">
-            <span class="k">Sede</span>
-            <span class="v">UCEMA · Aula Magna<br>Av. Córdoba 374, CABA</span>
-          </div>
-          <div class="col">
             <span class="k">Ecosistema</span>
             <span class="v">Conectá con docentes,<br>alumnos y partners.</span>
           </div>
           <div class="col">
             <span class="k">Misión</span>
             <span class="v"><em>Explorá</em> el futuro<br>de la educación + IA.</span>
+          </div>
+          <div class="col">
+            <span class="k">Práctica</span>
+            <span class="v">Del <em>aula</em><br>al impacto real.</span>
           </div>
         </div>
         <div class="footbar on-dark">
@@ -586,14 +707,74 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     </div>
   </section>
 
-  <!-- ============ SLIDE 05 — Anfitriones y Aliados ============ -->
+  <!-- ============ SLIDE 05 — XPLORA legacy / past speakers ============ -->
+  <section class="bg-purple">
+    <div class="frame">
+      <div class="xpl-legacy">
+        <div class="topbar on-dark" style="color:rgba(255,255,255,0.7);">
+          <span class="mark" style="color:#fff;"><span class="dot" style="background:var(--orange);"></span>&nbsp;Xplora · UCEMA</span>
+          <span>05 / 20 · Trayectoria</span>
+        </div>
+
+        <div class="lg-head">
+          <h2>Donde la <em>industria</em><br>pasa por el aula.</h2>
+          <p class="kicker">Xplora trae al campus a los <b>founders y CEOs</b> que están construyendo la economía digital de la región.</p>
+        </div>
+
+        <div class="xpl-stats">
+          <div class="col"><span class="n">+50</span><span class="l">Eventos &amp; encuentros</span></div>
+          <div class="col"><span class="n">+15k</span><span class="l">Asistentes en sala</span></div>
+          <div class="col"><span class="n">+100</span><span class="l">Founders &amp; CEOs invitados</span></div>
+        </div>
+
+        <div class="xpl-speakers">
+          <div class="sp feature">
+            <span class="yr">Founder · LATAM</span>
+            <h3 class="name">Hernán<br><em>Kazah.</em></h3>
+            <p class="role">Co-founder de <b>Mercado Libre</b> y managing partner en <b>Kaszek</b>, el fondo de VC más grande de la región.</p>
+          </div>
+          <div class="sp feature">
+            <span class="yr">CEO · Unicornio</span>
+            <h3 class="name">Martín<br><em>Migoya.</em></h3>
+            <p class="role">Co-founder y CEO de <b>Globant</b>, una de las tech públicas más grandes de Latinoamérica.</p>
+          </div>
+          <div class="sp">
+            <span class="yr">Speakers · Industria</span>
+            <h3 class="name">Founders<br><em>&amp; CEOs.</em></h3>
+            <p class="role">Banca, fintech, retail, agtech, salud, educación &amp; <b>tecnología profunda</b>.</p>
+          </div>
+          <div class="sp more">
+            <span class="yr">Y muchos más</span>
+            <div class="plus">+</div>
+            <p class="role">Decenas de <b>referentes</b> del ecosistema pasaron por el aula magna de UCEMA.</p>
+          </div>
+        </div>
+        <div class="footbar on-dark">
+          <div class="host">
+            <img src="assets/logo-aicollective-white.webp" alt="The AI Collective">
+            <span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span>
+          </div>
+          <div class="partners">
+            <span class="lbl">Aliados</span>
+            <img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic">
+            <span class="sep"></span>
+            <img class="galo" src="assets/logo-galo.png" alt="Galo">
+            <span class="sep"></span>
+            <span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 06 — Anfitriones y Aliados ============ -->
   <section class="bg-cream">
     <div class="ring" style="width:720px;height:720px;left:-260px;top:-260px;"></div>
     <div class="blob" style="width:280px;height:280px;right:80px;bottom:-100px;"></div>
     <div class="frame">
       <div class="topbar on-cream">
         <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
-        <span>05 / 19 · Red</span>
+        <span>06 / 20 · Red</span>
       </div>
 
       <div class="section-head">
@@ -640,7 +821,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream">
         <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
-        <span>06 / 19 · Sesión 01</span>
+        <span>07 / 20 · Sesión 01</span>
       </div>
       <div class="session-divider">
         <div class="left">
@@ -670,12 +851,12 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream">
         <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
-        <span>07 / 19 · Sesión Anthropic</span>
+        <span>08 / 20 · Sesión Anthropic</span>
       </div>
       <div class="content-placeholder">
         <span class="ph-eyebrow"><span class="sq"></span>Sesión 01 · Anthropic <span class="meta">— Cristian Cabrera</span></span>
         <h2>Título del <em>tema</em><br>02 de 03.</h2>
-        <div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div>
+        <div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div>
       </div>
       <div class="footbar on-cream">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
@@ -690,12 +871,12 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream">
         <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
-        <span>08 / 19 · Sesión Anthropic</span>
+        <span>09 / 20 · Sesión Anthropic</span>
       </div>
       <div class="content-placeholder">
         <span class="ph-eyebrow"><span class="sq"></span>Sesión 01 · Anthropic <span class="meta">— Cristian Cabrera</span></span>
         <h2>Título del <em>tema</em><br>03 de 03.</h2>
-        <div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div>
+        <div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div>
       </div>
       <div class="footbar on-cream">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
@@ -711,7 +892,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream">
         <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
-        <span>09 / 19 · Sesión 02</span>
+        <span>10 / 20 · Sesión 02</span>
       </div>
       <div class="session-divider">
         <div class="left">
@@ -736,40 +917,40 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   <section class="bg-cream">
     <div class="ring" style="width:420px;height:420px;right:-140px;top:-120px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>10 / 19 · Sesión Jimmy</span></div>
-      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>02 de 06.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>11 / 20 · Sesión Jimmy</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>02 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
   </section>
   <section class="bg-cream">
     <div class="blob" style="width:320px;height:320px;left:-100px;bottom:-120px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>11 / 19 · Sesión Jimmy</span></div>
-      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>03 de 06.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>12 / 20 · Sesión Jimmy</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>03 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
   </section>
   <section class="bg-cream">
     <div class="ring" style="width:600px;height:600px;right:-200px;bottom:-240px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>12 / 19 · Sesión Jimmy</span></div>
-      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>04 de 06.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>13 / 20 · Sesión Jimmy</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>04 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
   </section>
   <section class="bg-cream">
     <div class="blob" style="width:480px;height:480px;right:-160px;top:-160px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>13 / 19 · Sesión Jimmy</span></div>
-      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>05 de 06.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>14 / 20 · Sesión Jimmy</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>05 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
   </section>
   <section class="bg-cream">
     <div class="ring" style="width:380px;height:380px;left:-130px;top:-120px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>14 / 19 · Sesión Jimmy</span></div>
-      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>06 de 06.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>15 / 20 · Sesión Jimmy</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>06 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
   </section>
@@ -779,7 +960,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="blob" style="width:540px;height:540px;right:-180px;top:-160px;"></div>
     <div class="ring" style="width:320px;height:320px;left:-100px;bottom:-100px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>15 / 19 · Sesión 03</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>16 / 20 · Sesión 03</span></div>
       <div class="session-divider">
         <div class="left">
           <div class="num-block"><span class="big">03</span><span class="lbl">Caso práctico</span></div>
@@ -799,8 +980,8 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   <section class="bg-cream">
     <div class="ring" style="width:420px;height:420px;right:-140px;top:-120px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>16 / 19 · Sesión Luciano</span></div>
-      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 03 · Caso práctico <span class="meta">— Luciano Esteban</span></span><h2>Título del <em>tema</em><br>02 de 03.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>17 / 20 · Sesión Luciano</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 03 · Caso práctico <span class="meta">— Luciano Esteban</span></span><h2>Título del <em>tema</em><br>02 de 03.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
     </div>
   </section>
@@ -808,8 +989,8 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   <section class="bg-cream">
     <div class="blob" style="width:360px;height:360px;left:-120px;bottom:-120px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>17 / 19 · Sesión Luciano</span></div>
-      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 03 · Caso práctico <span class="meta">— Luciano Esteban</span></span><h2>Título del <em>tema</em><br>03 de 03.</h2><div class="slot"><span class="slot-mark">[ Contenido por desarrollar ]</span><span class="slot-hint">Espacio reservado para la diapositiva.</span></div></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>18 / 20 · Sesión Luciano</span></div>
+      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 03 · Caso práctico <span class="meta">— Luciano Esteban</span></span><h2>Título del <em>tema</em><br>03 de 03.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
     </div>
   </section>
@@ -819,7 +1000,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="blob" style="width:640px;height:640px;right:-240px;top:-200px;"></div>
     <div class="ring" style="width:420px;height:420px;left:-160px;bottom:-180px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>18 / 19 · Desafío</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>19 / 20 · Desafío</span></div>
       <div class="session-divider">
         <div class="left">
           <div class="num-block"><span class="big">04</span><span class="lbl">Presentación del desafío</span></div>
@@ -841,7 +1022,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="ring" style="width:720px;height:720px;right:-260px;bottom:-260px;"></div>
     <div class="blob" style="width:320px;height:320px;left:-120px;top:-100px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>19 / 19 · Bases del desafío</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>20 / 20 · Bases del desafío</span></div>
 
       <div class="bases-grid">
         <div>
