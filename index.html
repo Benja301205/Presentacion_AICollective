@@ -312,20 +312,19 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .brand-stamp img{height:24px;width:auto;}
 .brand-stamp img.anth-icon{height:22px;}
 
-/* ============ We Make It Lab — placeholder ============ */
+/* ============ We Make It Lab ============ */
 .wemil-chip{display:inline-flex;align-items:center;gap:10px;
   font-family:var(--mono);font-size:16px;letter-spacing:0.14em;text-transform:uppercase;
   color:var(--mute-on-cream);}
-.wemil-chip .ph{display:inline-flex;align-items:center;justify-content:center;
-  height:22px;padding:0 10px;border:1px dashed var(--terra);
-  font-size:11px;color:var(--terra);letter-spacing:0.08em;font-weight:700;}
+.wemil-chip img{width:auto;height:20px;display:block;}
+.footbar.on-cream .partners .wemil-chip img,
+.session-divider .wemil-chip img{filter:brightness(0);}
 .footbar .partners .wemil-chip{font-size:14px;letter-spacing:0.10em;}
 .footbar.on-dark .partners .wemil-chip{color:var(--mute-on-dark);}
-.footbar .partners .wemil-chip .ph{border-color:currentColor;color:inherit;opacity:0.55;}
 .wemil-card-ph{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;}
-.wemil-card-ph .ph-box{display:inline-flex;align-items:center;justify-content:center;
-  width:90px;height:48px;border:1.5px dashed var(--terra);
-  font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--terra);}
+.wemil-card-ph .logo-bg{width:120px;height:54px;background:var(--navy);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;padding:0 14px;}
+.wemil-card-ph .logo-bg img{width:auto;height:38px;display:block;}
 .wemil-card-ph .name{font-family:var(--sans);font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;}
 
 /* ============ Logos: quitar fondo blanco en contextos claros ============ */
@@ -401,7 +400,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
             <span class="sep"></span>
             <img class="galo" src="assets/logo-galo.png" alt="Galo">
             <span class="sep"></span>
-            <span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span>
+            <span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span>
           </div>
         </div>
       </div>
@@ -458,7 +457,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
             <span class="sep"></span>
             <img class="galo" src="assets/logo-galo.png" alt="Galo">
             <span class="sep"></span>
-            <span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span>
+            <span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span>
           </div>
         </div>
       </div>
@@ -487,8 +486,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
           <div class="right">
             <div class="qr-frame">
               <div class="qr-slot">
-                <span class="qr-mark">[ QR ]</span>
-                <span class="qr-hint">Insertar imagen del código QR</span>
+                <img src="assets/codigo-qrgrupoAICollective.jpeg" alt="QR Grupo AI Collective" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1;">
               </div>
               <span class="qr-foot">aicollective.bsas</span>
             </div>
@@ -523,7 +521,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
             <span class="sep"></span>
             <img class="galo" src="assets/logo-galo.png" alt="Galo">
             <span class="sep"></span>
-            <span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span>
+            <span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span>
           </div>
         </div>
       </div>
@@ -578,7 +576,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
             <span class="sep"></span>
             <img class="galo" src="assets/logo-galo.png" alt="Galo">
             <span class="sep"></span>
-            <span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span>
+            <span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span>
           </div>
         </div>
       </div>
@@ -620,14 +618,14 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         </div>
         <div class="tier-row-3">
           <div class="logo-card"><img class="anth" src="assets/logo-anthropic.png" alt="Anthropic"><span class="lbl">Anthropic · Charla introductoria</span></div>
-          <div class="logo-card"><div class="wemil-card-ph"><span class="ph-box">logo</span><span class="name">We Make It Lab</span></div><span class="lbl">We Make It Lab · Sesión Anthropic</span></div>
+          <div class="logo-card"><div class="wemil-card-ph"><div class="logo-bg"><img src="assets/logo-wemil.png" alt="We Make It Lab"></div><span class="name">We Make It Lab</span></div><span class="lbl">We Make It Lab · Sesión Anthropic</span></div>
           <div class="logo-card"><img class="galo" src="assets/logo-galo.png" alt="Galo"><span class="lbl">Galo · Challenge final</span></div>
         </div>
       </div>
 
       <div class="footbar on-cream">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
-        <div class="partners"><span class="lbl">Aliados</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><img class="galo" src="assets/logo-galo.png" alt="Galo"><span class="sep"></span><span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span></div>
+        <div class="partners"><span class="lbl">Aliados</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><img class="galo" src="assets/logo-galo.png" alt="Galo"><span class="sep"></span><span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span></div>
       </div>
     </div>
   </section>
@@ -647,7 +645,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
           <h1>Una mirada a<br><em>Claude</em>.</h1>
           <div style="display:flex;flex-direction:column;gap:12px;">
             <span class="brand-stamp"><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"> Anthropic · Partner técnico</span>
-            <span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span>
+            <span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span>
           </div>
         </div>
         <div class="speaker-card">
@@ -658,7 +656,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       </div>
       <div class="footbar on-cream">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
-        <div class="partners"><span class="lbl">Sesión</span><img class="anth" style="height:26px;" src="assets/logo-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span></div>
+        <div class="partners"><span class="lbl">Sesión</span><img class="anth" style="height:26px;" src="assets/logo-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span></div>
       </div>
     </div>
   </section>
@@ -678,7 +676,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       </div>
       <div class="footbar on-cream">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
-        <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span></div>
+        <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span></div>
       </div>
     </div>
   </section>
@@ -698,7 +696,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       </div>
       <div class="footbar on-cream">
         <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
-        <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><span class="ph">logo</span> We Make It Lab</span></div>
+        <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span></div>
       </div>
     </div>
   </section>
