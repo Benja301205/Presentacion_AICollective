@@ -411,7 +411,37 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 /* Logos invertidos a blanco en slides oscuras (galo/anth en dark footbar) */
 .footbar.on-dark .partners img.galo,
 .footbar.on-dark .partners img.anth-icon,
-.footbar.on-dark .partners img.anth{filter:brightness(0) invert(1);opacity:0.92;}
+.footbar.on-dark .partners img.anth,
+.footbar.on-dark .partners img.personal-logo{filter:brightness(0) invert(1);opacity:0.92;}
+
+/* ============ LUCIANO — 7 Niveles de Memoria ============ */
+.luc-split{flex:1;display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center;padding:28px 0 0;}
+.luc-left{display:flex;flex-direction:column;gap:22px;}
+.luc-badge{display:flex;align-items:baseline;gap:14px;}
+.luc-badge .n{font-family:var(--display);font-style:italic;font-size:148px;line-height:1;color:var(--orange);letter-spacing:-0.04em;}
+.luc-badge .of7{font-family:var(--mono);font-size:19px;color:var(--mute-on-cream);letter-spacing:0.14em;text-transform:uppercase;padding-bottom:16px;}
+.luc-left h2{margin:0;font-family:var(--display);font-weight:400;font-size:82px;line-height:0.95;color:var(--ink);letter-spacing:-0.02em;}
+.luc-left h2 em{color:var(--terra);font-style:italic;}
+.luc-concept{display:flex;gap:0;padding:22px 28px;background:rgba(43,58,74,0.05);border-left:3px solid var(--navy);}
+.luc-concept p{margin:0;font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.45;color:var(--ink);}
+.luc-concept p b{font-style:normal;color:var(--navy);}
+.luc-reto{display:flex;gap:0;padding:18px 28px;background:rgba(193,95,60,0.06);border-left:3px solid var(--terra);}
+.luc-reto .tag{font-family:var(--mono);font-size:15px;letter-spacing:0.2em;text-transform:uppercase;color:var(--terra);font-weight:700;white-space:nowrap;margin-right:14px;padding-top:4px;}
+.luc-reto p{margin:0;font-family:var(--sans);font-size:23px;line-height:1.4;color:var(--mute-on-cream);}
+.luc-reto p b{color:var(--ink);font-weight:600;}
+.luc-visual{display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.luc-visual svg{max-height:600px;width:auto;max-width:100%;}
+.luc-exp{flex:1;display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center;}
+.luc-exp-text{display:flex;flex-direction:column;gap:20px;}
+.luc-exp-text .eyebrow{font-family:var(--mono);font-size:22px;letter-spacing:0.22em;text-transform:uppercase;color:var(--orange);font-weight:700;}
+.luc-exp-text h1{margin:0;font-family:var(--display);font-weight:400;font-size:160px;line-height:0.88;color:var(--cream);letter-spacing:-0.04em;}
+.luc-exp-text h1 em{color:var(--orange);font-style:italic;}
+.luc-close{flex:1;display:flex;flex-direction:column;justify-content:center;gap:32px;max-width:1200px;}
+.luc-close h2{margin:0;font-family:var(--display);font-weight:400;font-size:96px;line-height:0.94;color:var(--cream);letter-spacing:-0.03em;}
+.footbar .partners img.personal-logo{height:30px;width:auto;display:block;}
+.luc-close h2 em{color:var(--orange);font-style:italic;}
+.luc-close .quote{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1.5;color:var(--mute-on-dark);max-width:900px;}
+.luc-close .quote b{color:var(--cream);font-style:normal;}
 </style>
 </head>
 <body style="">
@@ -538,7 +568,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       <div class="aic-wrap">
         <div class="aic-head">
           <span class="mark"><span class="dot"></span>&nbsp;The AI Collective · Buenos Aires</span>
-          <span>02 / 20 · Comunidad</span>
+          <span>02 / 27 · Comunidad</span>
         </div>
 
         <div class="aic-hero">
@@ -595,7 +625,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       <div class="aic-wrap">
         <div class="aic-head">
           <span class="mark"><span class="dot"></span>&nbsp;Sumate · The AI Collective</span>
-          <span>03 / 20 · Networking</span>
+          <span>03 / 27 · Networking</span>
         </div>
 
         <div class="aic-hero">
@@ -659,7 +689,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       <div class="xpl-wrap">
         <div class="topbar on-dark" style="color:rgba(255,255,255,0.7);">
           <span class="mark" style="color:#fff;"><span class="dot" style="background:var(--orange);"></span>&nbsp;Xplora · UCEMA</span>
-          <span>04 / 20 · Co-host</span>
+          <span>04 / 27 · Co-host</span>
         </div>
 
         <div class="xpl-hero">
@@ -713,7 +743,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       <div class="xpl-legacy">
         <div class="topbar on-dark" style="color:rgba(255,255,255,0.7);">
           <span class="mark" style="color:#fff;"><span class="dot" style="background:var(--orange);"></span>&nbsp;Xplora · UCEMA</span>
-          <span>05 / 20 · Trayectoria</span>
+          <span>05 / 27 · Trayectoria</span>
         </div>
 
         <div class="lg-head">
@@ -774,7 +804,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream">
         <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
-        <span>06 / 20 · Red</span>
+        <span>06 / 27 · Red</span>
       </div>
 
       <div class="section-head">
@@ -821,7 +851,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream">
         <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
-        <span>07 / 20 · Sesión 01</span>
+        <span>07 / 27 · Sesión 01</span>
       </div>
       <div class="session-divider">
         <div class="left">
@@ -851,7 +881,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream">
         <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
-        <span>08 / 20 · Sesión Anthropic</span>
+        <span>08 / 27 · Sesión Anthropic</span>
       </div>
       <div class="content-placeholder">
         <span class="ph-eyebrow"><span class="sq"></span>Sesión 01 · Anthropic <span class="meta">— Cristian Cabrera</span></span>
@@ -871,7 +901,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream">
         <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
-        <span>09 / 20 · Sesión Anthropic</span>
+        <span>09 / 27 · Sesión Anthropic</span>
       </div>
       <div class="content-placeholder">
         <span class="ph-eyebrow"><span class="sq"></span>Sesión 01 · Anthropic <span class="meta">— Cristian Cabrera</span></span>
@@ -892,7 +922,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream">
         <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
-        <span>10 / 20 · Sesión 02</span>
+        <span>10 / 27 · Sesión 02</span>
       </div>
       <div class="session-divider">
         <div class="left">
@@ -917,7 +947,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   <section class="bg-cream">
     <div class="ring" style="width:420px;height:420px;right:-140px;top:-120px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>11 / 20 · Sesión Jimmy</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>11 / 27 · Sesión Jimmy</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>02 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
@@ -925,7 +955,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   <section class="bg-cream">
     <div class="blob" style="width:320px;height:320px;left:-100px;bottom:-120px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>12 / 20 · Sesión Jimmy</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>12 / 27 · Sesión Jimmy</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>03 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
@@ -933,7 +963,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   <section class="bg-cream">
     <div class="ring" style="width:600px;height:600px;right:-200px;bottom:-240px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>13 / 20 · Sesión Jimmy</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>13 / 27 · Sesión Jimmy</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>04 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
@@ -941,7 +971,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   <section class="bg-cream">
     <div class="blob" style="width:480px;height:480px;right:-160px;top:-160px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>14 / 20 · Sesión Jimmy</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>14 / 27 · Sesión Jimmy</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>05 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
@@ -949,7 +979,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
   <section class="bg-cream">
     <div class="ring" style="width:380px;height:380px;left:-130px;top:-120px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>15 / 20 · Sesión Jimmy</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>15 / 27 · Sesión Jimmy</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>06 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
@@ -960,7 +990,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="blob" style="width:540px;height:540px;right:-180px;top:-160px;"></div>
     <div class="ring" style="width:320px;height:320px;left:-100px;bottom:-100px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>16 / 20 · Sesión 03</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>16 / 27 · Sesión 03</span></div>
       <div class="session-divider">
         <div class="left">
           <div class="num-block"><span class="big">03</span><span class="lbl">Caso práctico</span></div>
@@ -973,25 +1003,368 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
           <p class="sp-bio"><b>Arquitecto de Ciberseguridad</b> en Personal. Comparte cómo aplica Claude + Obsidian en su <b>flujo diario</b> de trabajo y aprendizaje.</p>
         </div>
       </div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Caso práctico</span><img class="personal-logo" src="assets/logo_personal.png" alt="Personal"></div></div>
     </div>
   </section>
 
-  <section class="bg-cream">
-    <div class="ring" style="width:420px;height:420px;right:-140px;top:-120px;"></div>
+  <!-- ============ SLIDE Luciano 01 — El Experimento (apertura interactiva) ============ -->
+  <section class="bg-navy">
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>17 / 20 · Sesión Luciano</span></div>
-      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 03 · Caso práctico <span class="meta">— Luciano Esteban</span></span><h2>Título del <em>tema</em><br>02 de 03.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
+      <div class="topbar on-dark">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>17 / 27 · Sesión Luciano</span>
+      </div>
+      <div class="luc-exp">
+        <div class="luc-exp-text">
+          <span class="eyebrow">Memoria en IA</span>
+          <h1>7 <em>Niveles.</em></h1>
+        </div>
+        <div class="luc-visual">
+          <svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="10"  y="390" width="60" height="20"  fill="rgba(255,112,51,0.18)" rx="3"/>
+            <rect x="90"  y="340" width="60" height="70"  fill="rgba(255,112,51,0.30)" rx="3"/>
+            <rect x="170" y="275" width="60" height="135" fill="rgba(255,112,51,0.43)" rx="3"/>
+            <rect x="250" y="205" width="60" height="205" fill="rgba(255,112,51,0.56)" rx="3"/>
+            <rect x="330" y="135" width="60" height="275" fill="rgba(255,112,51,0.70)" rx="3"/>
+            <rect x="410" y="68"  width="60" height="342" fill="rgba(255,112,51,0.85)" rx="3"/>
+            <rect x="490" y="10"  width="60" height="400" fill="#ff7033" rx="3"/>
+            <text x="40"  y="382" text-anchor="middle" font-family="DM Serif Display,serif" font-size="20" fill="rgba(255,255,255,0.30)" font-style="italic">1</text>
+            <text x="120" y="332" text-anchor="middle" font-family="DM Serif Display,serif" font-size="20" fill="rgba(255,255,255,0.42)" font-style="italic">2</text>
+            <text x="200" y="267" text-anchor="middle" font-family="DM Serif Display,serif" font-size="20" fill="rgba(255,255,255,0.54)" font-style="italic">3</text>
+            <text x="280" y="197" text-anchor="middle" font-family="DM Serif Display,serif" font-size="20" fill="rgba(255,255,255,0.66)" font-style="italic">4</text>
+            <text x="360" y="127" text-anchor="middle" font-family="DM Serif Display,serif" font-size="20" fill="rgba(255,255,255,0.80)" font-style="italic">5</text>
+            <text x="440" y="60"  text-anchor="middle" font-family="DM Serif Display,serif" font-size="20" fill="rgba(255,255,255,0.92)" font-style="italic">6</text>
+            <text x="520" y="0"   text-anchor="middle" font-family="DM Serif Display,serif" font-size="26" fill="#fff" font-style="italic">7</text>
+          </svg>
+        </div>
+      </div>
+      <div class="footbar on-dark">
+        <div class="host"><img src="assets/logo-aicollective-white.webp" alt="The AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Caso práctico</span><img class="personal-logo" src="assets/logo_personal.png" alt="Personal"></div>
+      </div>
     </div>
   </section>
 
+  <!-- ============ SLIDE Luciano 02 — Nivel 01 Automemory ============ -->
   <section class="bg-cream">
-    <div class="blob" style="width:360px;height:360px;left:-120px;bottom:-120px;"></div>
+    <div class="blob" style="width:480px;height:480px;right:-160px;top:-160px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>18 / 20 · Sesión Luciano</span></div>
-      <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 03 · Caso práctico <span class="meta">— Luciano Esteban</span></span><h2>Título del <em>tema</em><br>03 de 03.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>18 / 27 · Sesión Luciano</span>
+      </div>
+      <div class="luc-split">
+        <div class="luc-left">
+          <div class="luc-badge"><span class="n">01</span><span class="of7">/ 07</span></div>
+          <h2>Auto­<em>memory.</em></h2>
+          <div class="luc-concept"><p>Claude anota y recuerda en segundo plano, <b>sin que le pidamos nada</b>. El default de casi todos.</p></div>
+          <div class="luc-reto"><span class="tag">Reto</span><p><b>Context rot:</b> sesiones largas → el modelo se marea con su propia info. Calidad baja, tokens suben.</p></div>
+        </div>
+        <div class="luc-visual">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(193,95,60,0.12)" stroke-width="2"/>
+            <circle cx="200" cy="200" r="100" fill="none" stroke="rgba(193,95,60,0.18)" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <path d="M 200 60 A 140 140 0 1 1 86 286" fill="none" stroke="var(--terra)" stroke-width="5" stroke-linecap="round"/>
+            <polygon points="70,300 90,272 106,296" fill="var(--terra)"/>
+            <path d="M 200 128 L 258 228 H 142 Z" fill="rgba(193,95,60,0.12)" stroke="var(--terra)" stroke-width="3" stroke-linejoin="round"/>
+            <text x="200" y="213" text-anchor="middle" font-family="Manrope,sans-serif" font-size="36" font-weight="700" fill="var(--terra)">!</text>
+          </svg>
+        </div>
+      </div>
+      <div class="footbar on-cream">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Caso práctico</span><img class="personal-logo" src="assets/logo_personal.png" alt="Personal"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE Luciano 03 — Nivel 02 claude.md ============ -->
+  <section class="bg-cream">
+    <div class="ring" style="width:440px;height:440px;left:-160px;bottom:-160px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>19 / 27 · Sesión Luciano</span>
+      </div>
+      <div class="luc-split">
+        <div class="luc-left">
+          <div class="luc-badge"><span class="n">02</span><span class="of7">/ 07</span></div>
+          <h2>claude<em>.md</em></h2>
+          <div class="luc-concept"><p>Un archivo maestro con reglas y contexto del proyecto. <b>El índice que guía al modelo</b>, no la enciclopedia.</p></div>
+          <div class="luc-reto"><span class="tag">Reto</span><p>Inyectar reglas globales en <b>cada</b> prompt genera ruido. Funciona genial al arrancar, pero <b>no escala</b>.</p></div>
+        </div>
+        <div class="luc-visual">
+          <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M 40 70 H 360 L 260 210 H 140 Z" fill="rgba(193,95,60,0.10)" stroke="var(--terra)" stroke-width="3" stroke-linejoin="round"/>
+            <rect x="155" y="210" width="90" height="160" fill="rgba(193,95,60,0.08)" stroke="var(--terra)" stroke-width="3" rx="4"/>
+            <circle cx="90"  cy="38" r="8"  fill="var(--terra)" opacity="0.55"/>
+            <circle cx="155" cy="24" r="6"  fill="var(--navy)" opacity="0.45"/>
+            <circle cx="225" cy="34" r="9"  fill="var(--terra)" opacity="0.45"/>
+            <circle cx="295" cy="26" r="7"  fill="var(--navy)" opacity="0.38"/>
+            <circle cx="340" cy="46" r="5"  fill="var(--terra)" opacity="0.5"/>
+            <circle cx="125" cy="18" r="5"  fill="var(--navy)" opacity="0.32"/>
+            <circle cx="268" cy="16" r="6"  fill="var(--terra)" opacity="0.45"/>
+            <circle cx="200" cy="396" r="12" fill="var(--terra)"/>
+            <text x="200" y="320" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="18" fill="var(--terra)" font-weight="700">claude.md</text>
+          </svg>
+        </div>
+      </div>
+      <div class="footbar on-cream">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Caso práctico</span><img class="personal-logo" src="assets/logo_personal.png" alt="Personal"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE Luciano 04 — Nivel 03 Multi-Archivo ============ -->
+  <section class="bg-cream">
+    <div class="blob" style="width:360px;height:360px;right:-120px;bottom:-120px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>20 / 27 · Sesión Luciano</span>
+      </div>
+      <div class="luc-split">
+        <div class="luc-left">
+          <div class="luc-badge"><span class="n">03</span><span class="of7">/ 07</span></div>
+          <h2>Multi-<em>Archivo.</em></h2>
+          <div class="luc-concept"><p>Separar la memoria <b>por propósito</b>: project, requirements, roadmap. El modelo lee solo lo que la tarea demanda.</p></div>
+          <div class="luc-reto"><span class="tag">Valor</span><p>Base fundacional para flujos eficientes. <b>Control total</b> sobre qué está leyendo la IA y cuándo.</p></div>
+        </div>
+        <div class="luc-visual">
+          <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="130" y="20" width="160" height="56" rx="6" fill="var(--navy)"/>
+            <text x="210" y="52" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="17" fill="#fff" font-weight="500">project.md</text>
+            <line x1="210" y1="76" x2="100" y2="170" stroke="rgba(43,58,74,0.30)" stroke-width="2"/>
+            <line x1="210" y1="76" x2="210" y2="170" stroke="rgba(43,58,74,0.30)" stroke-width="2"/>
+            <line x1="210" y1="76" x2="320" y2="170" stroke="rgba(43,58,74,0.30)" stroke-width="2"/>
+            <rect x="18"  y="170" width="162" height="52" rx="6" fill="rgba(43,58,74,0.08)" stroke="var(--navy)" stroke-width="2"/>
+            <text x="99"  y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="var(--navy)">requirements.md</text>
+            <rect x="130" y="170" width="160" height="52" rx="6" fill="rgba(193,95,60,0.12)" stroke="var(--terra)" stroke-width="2"/>
+            <text x="210" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="16" fill="var(--terra)">roadmap.md</text>
+            <rect x="240" y="170" width="162" height="52" rx="6" fill="rgba(43,58,74,0.06)" stroke="var(--navy)" stroke-width="1.5" stroke-dasharray="5 3"/>
+            <text x="321" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="15" fill="var(--navy)" opacity="0.65">context.md</text>
+            <line x1="210" y1="222" x2="210" y2="296" stroke="var(--terra)" stroke-width="2" stroke-dasharray="5 3"/>
+            <polygon points="202,296 218,296 210,310" fill="var(--terra)"/>
+            <text x="210" y="342" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" fill="var(--mute-on-cream)" font-style="italic">Claude lee solo lo necesario</text>
+          </svg>
+        </div>
+      </div>
+      <div class="footbar on-cream">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Caso práctico</span><img class="personal-logo" src="assets/logo_personal.png" alt="Personal"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE Luciano 05 — Nivel 04 Obsidian Vault ============ -->
+  <section class="bg-cream">
+    <div class="ring" style="width:500px;height:500px;left:-180px;top:-180px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>21 / 27 · Sesión Luciano</span>
+      </div>
+      <div class="luc-split">
+        <div class="luc-left">
+          <div class="luc-badge"><span class="n">04</span><span class="of7">/ 07</span></div>
+          <h2>Obsidian<br><em>Vault.</em></h2>
+          <div class="luc-concept"><p>Jerarquía <b>dura e interconectada</b>. Vault → Wiki → Index. El sweet spot del 99% de los casos de uso.</p></div>
+          <div class="luc-reto"><span class="tag">Valor</span><p>Costo cero, <b>control total</b>, sin latencias. Un vault bien indexado supera a casi cualquier RAG complejo.</p></div>
+        </div>
+        <div class="luc-visual">
+          <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="210" y1="180" x2="210" y2="60"  stroke="rgba(58,13,140,0.25)" stroke-width="2"/>
+            <line x1="210" y1="180" x2="100" y2="120" stroke="rgba(58,13,140,0.25)" stroke-width="2"/>
+            <line x1="210" y1="180" x2="320" y2="120" stroke="rgba(58,13,140,0.25)" stroke-width="2"/>
+            <line x1="210" y1="180" x2="80"  y2="220" stroke="rgba(58,13,140,0.25)" stroke-width="2"/>
+            <line x1="210" y1="180" x2="340" y2="220" stroke="rgba(58,13,140,0.25)" stroke-width="2"/>
+            <line x1="210" y1="180" x2="150" y2="310" stroke="rgba(58,13,140,0.25)" stroke-width="2"/>
+            <line x1="210" y1="180" x2="270" y2="310" stroke="rgba(58,13,140,0.25)" stroke-width="2"/>
+            <line x1="210" y1="60"  x2="100" y2="120" stroke="rgba(58,13,140,0.14)" stroke-width="1.5"/>
+            <line x1="210" y1="60"  x2="320" y2="120" stroke="rgba(58,13,140,0.14)" stroke-width="1.5"/>
+            <line x1="100" y1="120" x2="80"  y2="220" stroke="rgba(58,13,140,0.14)" stroke-width="1.5"/>
+            <line x1="320" y1="120" x2="340" y2="220" stroke="rgba(58,13,140,0.14)" stroke-width="1.5"/>
+            <line x1="80"  y1="220" x2="150" y2="310" stroke="rgba(58,13,140,0.14)" stroke-width="1.5"/>
+            <line x1="340" y1="220" x2="270" y2="310" stroke="rgba(58,13,140,0.14)" stroke-width="1.5"/>
+            <circle cx="210" cy="60"  r="14" fill="rgba(58,13,140,0.14)" stroke="#6a35c2" stroke-width="2"/>
+            <circle cx="100" cy="120" r="12" fill="rgba(58,13,140,0.11)" stroke="#6a35c2" stroke-width="1.5"/>
+            <circle cx="320" cy="120" r="12" fill="rgba(58,13,140,0.11)" stroke="#6a35c2" stroke-width="1.5"/>
+            <circle cx="80"  cy="220" r="11" fill="rgba(58,13,140,0.09)" stroke="#6a35c2" stroke-width="1.5"/>
+            <circle cx="340" cy="220" r="11" fill="rgba(58,13,140,0.09)" stroke="#6a35c2" stroke-width="1.5"/>
+            <circle cx="150" cy="310" r="10" fill="rgba(58,13,140,0.08)" stroke="#6a35c2" stroke-width="1.5"/>
+            <circle cx="270" cy="310" r="10" fill="rgba(58,13,140,0.08)" stroke="#6a35c2" stroke-width="1.5"/>
+            <circle cx="210" cy="180" r="32" fill="var(--purple)"/>
+            <text x="210" y="176" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" fill="#fff" font-weight="700">Vault</text>
+            <text x="210" y="193" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" fill="rgba(255,255,255,0.75)">Index</text>
+          </svg>
+        </div>
+      </div>
+      <div class="footbar on-cream">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Caso práctico</span><img class="personal-logo" src="assets/logo_personal.png" alt="Personal"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE Luciano 06 — Nivel 05 Naive RAG ============ -->
+  <section class="bg-cream">
+    <div class="blob" style="width:400px;height:400px;left:-140px;bottom:-140px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>22 / 27 · Sesión Luciano</span>
+      </div>
+      <div class="luc-split">
+        <div class="luc-left">
+          <div class="luc-badge"><span class="n">05</span><span class="of7">/ 07</span></div>
+          <h2>Naive<br><em>RAG.</em></h2>
+          <div class="luc-concept"><p>Chunking básico: cortar documentos y buscar <b>similitud vectorial</b>. Útil para datos puntuales.</p></div>
+          <div class="luc-reto"><span class="tag">Reto</span><p>Rompe las relaciones. Si <b>A y B están separados</b> en el texto, el modelo no entiende cómo se conectan.</p></div>
+        </div>
+        <div class="luc-visual">
+          <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="80"  cy="80"  r="18" fill="rgba(0,118,219,0.14)" stroke="var(--blue)" stroke-width="2"/>
+            <circle cx="200" cy="50"  r="14" fill="rgba(0,118,219,0.11)" stroke="var(--blue)" stroke-width="1.5"/>
+            <circle cx="340" cy="90"  r="20" fill="rgba(0,118,219,0.14)" stroke="var(--blue)" stroke-width="2"/>
+            <circle cx="60"  cy="200" r="16" fill="rgba(0,118,219,0.10)" stroke="var(--blue)" stroke-width="1.5"/>
+            <circle cx="160" cy="180" r="22" fill="rgba(0,118,219,0.17)" stroke="var(--blue)" stroke-width="2"/>
+            <circle cx="300" cy="170" r="12" fill="rgba(0,118,219,0.10)" stroke="var(--blue)" stroke-width="1.5"/>
+            <circle cx="380" cy="220" r="18" fill="rgba(0,118,219,0.12)" stroke="var(--blue)" stroke-width="1.5"/>
+            <circle cx="120" cy="310" r="15" fill="rgba(0,118,219,0.10)" stroke="var(--blue)" stroke-width="1.5"/>
+            <circle cx="250" cy="300" r="20" fill="rgba(0,118,219,0.14)" stroke="var(--blue)" stroke-width="2"/>
+            <circle cx="370" cy="330" r="13" fill="rgba(0,118,219,0.10)" stroke="var(--blue)" stroke-width="1.5"/>
+            <text x="80"  y="85"  text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="var(--blue)" font-weight="500">A</text>
+            <text x="200" y="55"  text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="var(--blue)" font-weight="500">B</text>
+            <text x="340" y="95"  text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="var(--blue)" font-weight="500">C</text>
+            <text x="160" y="185" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="14" fill="var(--blue)" font-weight="500">D</text>
+            <text x="250" y="305" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="var(--blue)" font-weight="500">E</text>
+            <text x="210" y="370" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" fill="var(--mute-on-cream)" font-style="italic">sin relaciones entre chunks</text>
+          </svg>
+        </div>
+      </div>
+      <div class="footbar on-cream">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Caso práctico</span><img class="personal-logo" src="assets/logo_personal.png" alt="Personal"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE Luciano 07 — Nivel 06 Graph RAG ============ -->
+  <section class="bg-cream">
+    <div class="ring" style="width:460px;height:460px;right:-160px;top:-160px;"></div>
+    <div class="frame">
+      <div class="topbar on-cream">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>23 / 27 · Sesión Luciano</span>
+      </div>
+      <div class="luc-split">
+        <div class="luc-left">
+          <div class="luc-badge"><span class="n">06</span><span class="of7">/ 07</span></div>
+          <h2>Graph<br><em>RAG.</em></h2>
+          <div class="luc-concept"><p>El modelo <b>extrae entidades y mapea cómo se conectan</b>. Entiende relaciones, no solo keywords.</p></div>
+          <div class="luc-reto"><span class="tag">Valor</span><p>Si tu producto necesita RAG sí o sí, este es el <b>estándar</b>. Eficacia y precisión dan un salto enorme.</p></div>
+        </div>
+        <div class="luc-visual">
+          <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="210" y1="180" x2="210" y2="60"  stroke="rgba(193,95,60,0.5)" stroke-width="2.5"/>
+            <line x1="210" y1="180" x2="80"  y2="130" stroke="rgba(193,95,60,0.5)" stroke-width="2.5"/>
+            <line x1="210" y1="180" x2="340" y2="130" stroke="rgba(193,95,60,0.5)" stroke-width="2.5"/>
+            <line x1="210" y1="180" x2="90"  y2="270" stroke="rgba(193,95,60,0.4)" stroke-width="2"/>
+            <line x1="210" y1="180" x2="330" y2="270" stroke="rgba(193,95,60,0.4)" stroke-width="2"/>
+            <line x1="210" y1="60"  x2="80"  y2="130" stroke="rgba(193,95,60,0.22)" stroke-width="1.5"/>
+            <line x1="210" y1="60"  x2="340" y2="130" stroke="rgba(193,95,60,0.22)" stroke-width="1.5"/>
+            <line x1="80"  y1="130" x2="90"  y2="270" stroke="rgba(193,95,60,0.18)" stroke-width="1.5"/>
+            <line x1="340" y1="130" x2="330" y2="270" stroke="rgba(193,95,60,0.18)" stroke-width="1.5"/>
+            <circle cx="210" cy="60"  r="28" fill="rgba(193,95,60,0.10)" stroke="var(--terra)" stroke-width="2"/>
+            <text x="210" y="65"  text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" fill="var(--terra)" font-weight="700">Entidad A</text>
+            <circle cx="80"  cy="130" r="28" fill="rgba(193,95,60,0.10)" stroke="var(--terra)" stroke-width="2"/>
+            <text x="80"  y="135" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" fill="var(--terra)" font-weight="700">Entidad B</text>
+            <circle cx="340" cy="130" r="28" fill="rgba(193,95,60,0.10)" stroke="var(--terra)" stroke-width="2"/>
+            <text x="340" y="135" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" fill="var(--terra)" font-weight="700">Entidad C</text>
+            <circle cx="90"  cy="270" r="24" fill="rgba(193,95,60,0.08)" stroke="var(--terra)" stroke-width="1.5"/>
+            <text x="90"  y="275" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" fill="var(--terra)" font-weight="600">Doc 1</text>
+            <circle cx="330" cy="270" r="24" fill="rgba(193,95,60,0.08)" stroke="var(--terra)" stroke-width="1.5"/>
+            <text x="330" y="275" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" fill="var(--terra)" font-weight="600">Doc 2</text>
+            <circle cx="210" cy="180" r="36" fill="var(--terra)"/>
+            <text x="210" y="175" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" fill="#fff" font-weight="700">Graph</text>
+            <text x="210" y="193" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" fill="rgba(255,255,255,0.82)">LightRAG</text>
+            <text x="210" y="348" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" fill="var(--mute-on-cream)" font-style="italic">relaciones explícitas entre entidades</text>
+          </svg>
+        </div>
+      </div>
+      <div class="footbar on-cream">
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Caso práctico</span><img class="personal-logo" src="assets/logo_personal.png" alt="Personal"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE Luciano 08 — Nivel 07 Agentic & Multimodal RAG ============ -->
+  <section class="bg-navy">
+    <div class="frame">
+      <div class="topbar on-dark">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>24 / 27 · Sesión Luciano</span>
+      </div>
+      <div class="luc-split">
+        <div class="luc-left">
+          <div class="luc-badge"><span class="n" style="color:var(--orange)">07</span><span class="of7" style="color:rgba(255,255,255,0.4)">/ 07</span></div>
+          <h2 style="color:var(--cream);">Agentic &amp;<br><em>Multimodal RAG.</em></h2>
+          <div class="luc-concept" style="background:rgba(255,255,255,0.06);border-left:3px solid var(--orange);"><p style="color:var(--cream);">Un <b style="color:#fff">agente top-of-funnel</b> decide qué base consultar. Ingesta de video, imágenes, grafos y docs.</p></div>
+          <div class="luc-reto" style="background:rgba(255,112,51,0.10);border-left:3px solid var(--orange);"><span class="tag" style="color:var(--orange)">Valor</span><p style="color:rgba(255,255,255,0.68);">El valor real es la <b style="color:#fff">calidad de los datos</b> en segundo plano: limpiar, ingestar y sincronizar antes de que llegue a la IA.</p></div>
+        </div>
+        <div class="luc-visual">
+          <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="210" y1="190" x2="210" y2="52"  stroke="rgba(255,112,51,0.5)" stroke-width="2.5" stroke-dasharray="6 3"/>
+            <line x1="210" y1="190" x2="60"  y2="152" stroke="rgba(255,112,51,0.5)" stroke-width="2.5" stroke-dasharray="6 3"/>
+            <line x1="210" y1="190" x2="360" y2="152" stroke="rgba(255,112,51,0.5)" stroke-width="2.5" stroke-dasharray="6 3"/>
+            <line x1="210" y1="190" x2="108" y2="318" stroke="rgba(255,112,51,0.4)" stroke-width="2"   stroke-dasharray="6 3"/>
+            <line x1="210" y1="190" x2="312" y2="318" stroke="rgba(255,112,51,0.4)" stroke-width="2"   stroke-dasharray="6 3"/>
+            <polygon points="204,54 216,54 210,38" fill="rgba(255,112,51,0.7)"/>
+            <polygon points="63,146 51,157 46,141" fill="rgba(255,112,51,0.7)"/>
+            <polygon points="357,146 369,141 373,157" fill="rgba(255,112,51,0.7)"/>
+            <polygon points="102,316 114,322 104,332" fill="rgba(255,112,51,0.55)"/>
+            <polygon points="316,316 304,322 314,332" fill="rgba(255,112,51,0.55)"/>
+            <rect x="155" y="20"  width="110" height="44" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,112,51,0.5)" stroke-width="1.5"/>
+            <text x="210" y="47"  text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" fill="rgba(255,255,255,0.85)" font-weight="600">Vector DB</text>
+            <rect x="10"  y="122" width="100" height="44" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,112,51,0.5)" stroke-width="1.5"/>
+            <text x="60"  y="149" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" fill="rgba(255,255,255,0.85)" font-weight="600">Graph DB</text>
+            <rect x="310" y="122" width="100" height="44" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,112,51,0.5)" stroke-width="1.5"/>
+            <text x="360" y="149" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" fill="rgba(255,255,255,0.85)" font-weight="600">Video / Img</text>
+            <rect x="48"  y="300" width="120" height="44" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,112,51,0.38)" stroke-width="1.5"/>
+            <text x="108" y="327" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" fill="rgba(255,255,255,0.72)" font-weight="600">Docs / MD</text>
+            <rect x="252" y="300" width="120" height="44" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,112,51,0.38)" stroke-width="1.5"/>
+            <text x="312" y="327" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" fill="rgba(255,255,255,0.72)" font-weight="600">APIs / Tools</text>
+            <circle cx="210" cy="190" r="44" fill="var(--orange)"/>
+            <text x="210" y="185" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" fill="#fff" font-weight="800">AGENTE</text>
+            <text x="210" y="202" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" fill="rgba(255,255,255,0.85)">top-of-funnel</text>
+          </svg>
+        </div>
+      </div>
+      <div class="footbar on-dark">
+        <div class="host"><img src="assets/logo-aicollective-white.webp" alt="The AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Caso práctico</span><img class="personal-logo" src="assets/logo_personal.png" alt="Personal"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE Luciano 09 — Cierre ============ -->
+  <section class="bg-navy">
+    <div class="frame">
+      <div class="topbar on-dark">
+        <span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span>
+        <span>25 / 27 · Sesión Luciano</span>
+      </div>
+      <div class="luc-close">
+        <span style="font-family:var(--mono);font-size:20px;letter-spacing:0.22em;text-transform:uppercase;color:var(--orange);font-weight:700;">Takeaway final</span>
+        <h2>Escalá al siguiente nivel<br>solo cuando el <em>producto</em><br>y el usuario te lo pidan.</h2>
+        <p class="quote">Un sistema <b>local y simple, bien estructurado</b>, es muchísimo más poderoso que un RAG gigante que nadie puede mantener. Iteren rápido, aporten valor y <b>construyan con pragmatismo.</b></p>
+      </div>
+      <div class="footbar on-dark">
+        <div class="host"><img src="assets/logo-aicollective-white.webp" alt="The AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div>
+        <div class="partners"><span class="lbl">Caso práctico</span><img class="personal-logo" src="assets/logo_personal.png" alt="Personal"></div>
+      </div>
     </div>
   </section>
 
@@ -1000,7 +1373,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="blob" style="width:640px;height:640px;right:-240px;top:-200px;"></div>
     <div class="ring" style="width:420px;height:420px;left:-160px;bottom:-180px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>19 / 20 · Desafío</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>26 / 27 · Desafío</span></div>
       <div class="session-divider">
         <div class="left">
           <div class="num-block"><span class="big">04</span><span class="lbl">Presentación del desafío</span></div>
@@ -1022,7 +1395,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="ring" style="width:720px;height:720px;right:-260px;bottom:-260px;"></div>
     <div class="blob" style="width:320px;height:320px;left:-120px;top:-100px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>20 / 20 · Bases del desafío</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>27 / 27 · Bases del desafío</span></div>
 
       <div class="bases-grid">
         <div>
