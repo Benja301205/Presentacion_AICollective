@@ -382,10 +382,35 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .pill .sq{width:12px;height:12px;}
 
 /* small inline brand stamp for divider */
-.galo-brand-card{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:48px;text-align:center;padding:60px 0;}
-.galo-brand-card .galo-mark{height:280px;width:auto;display:block;}
-.galo-brand-card h1{margin:0;font-family:var(--display);font-weight:400;font-size:200px;color:var(--ink);letter-spacing:-0.04em;line-height:1;}
+.galo-brand-card{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center;padding:40px 0;}
+.galo-brand-card .galo-question{font-family:var(--display);font-style:italic;font-size:72px;color:var(--terra);line-height:1;letter-spacing:-0.015em;margin-bottom:4px;}
+.galo-brand-card .galo-mark{height:220px;width:auto;display:block;}
+.galo-brand-card h1{margin:0;font-family:var(--display);font-weight:400;font-size:160px;color:var(--ink);letter-spacing:-0.04em;line-height:1;}
 .galo-brand-card h1 em{color:var(--terra);font-style:italic;}
+.galo-presenter{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:24px;padding-top:24px;border-top:1px solid var(--rule-on-cream);min-width:360px;}
+.galo-presenter .presenter-tag{font-family:var(--mono);font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute-on-cream);font-weight:700;}
+.galo-presenter .presenter-name{font-family:var(--display);font-size:52px;line-height:1;color:var(--ink);letter-spacing:-0.01em;}
+.galo-presenter .presenter-name em{color:var(--terra);font-style:italic;}
+.galo-presenter .presenter-role{font-family:var(--mono);font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute-on-cream);}
+
+/* ============ SLIDE 20 — Challenge criteria ============ */
+.challenge-wrap{flex:1;display:flex;flex-direction:column;gap:48px;padding-top:24px;}
+.challenge-head{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:end;padding-bottom:32px;border-bottom:1px solid var(--rule-on-cream);}
+.challenge-head .head-left{display:flex;flex-direction:column;gap:24px;}
+.challenge-head h2{margin:0;font-family:var(--display);font-weight:400;font-size:104px;line-height:0.96;color:var(--ink);letter-spacing:-0.015em;}
+.challenge-head h2 em{color:var(--terra);font-style:italic;}
+.challenge-head .lede{margin:0;font-size:21px;line-height:1.5;color:#3b322c;}
+.challenge-head .lede b{color:var(--ink);font-weight:700;}
+.challenge-criteria{display:grid;grid-template-columns:repeat(3,1fr);gap:0;flex:1;}
+.challenge-criteria .col{display:flex;flex-direction:column;gap:18px;padding:8px 36px 8px 0;border-right:1px solid var(--rule-on-cream);}
+.challenge-criteria .col + .col{padding-left:36px;}
+.challenge-criteria .col:last-child{border-right:none;padding-right:0;}
+.challenge-criteria .num{font-family:var(--mono);font-size:14px;letter-spacing:0.24em;color:var(--terra);font-weight:700;}
+.challenge-criteria h4{margin:0;font-family:var(--display);font-weight:400;font-size:56px;line-height:1;color:var(--ink);letter-spacing:-0.01em;}
+.challenge-criteria h4 em{color:var(--terra);font-style:italic;}
+.challenge-criteria .q{margin:0;font-family:var(--mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);font-weight:700;}
+.challenge-criteria p.desc{margin:0;font-size:18px;line-height:1.5;color:#3b322c;}
+.challenge-criteria p.desc b{color:var(--ink);font-weight:700;}
 .brand-stamp{display:inline-flex;align-items:center;gap:10px;
   font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute-on-cream);}
 .brand-stamp img{height:24px;width:auto;}
@@ -1006,8 +1031,14 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>19 / 20 · Partner del desafío</span></div>
       <div class="galo-brand-card">
+        <span class="galo-question">¿Qué es?</span>
         <img class="galo-mark" src="assets/logo-galo.png" alt="Galo">
         <h1><em>Galo</em>.</h1>
+        <div class="galo-presenter">
+          <span class="presenter-tag">Lo presenta</span>
+          <span class="presenter-name">Franco <em>Pesce</em></span>
+          <span class="presenter-role">CTO · Galo</span>
+        </div>
       </div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.png" alt="Galo"></div></div>
     </div>
@@ -1020,18 +1051,35 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>20 / 20 · El desafío</span></div>
 
-      <div class="bases-grid">
-        <div>
-          <span class="pill" style="border:1px solid var(--ink);color:var(--ink);margin-bottom:24px;">
-            <span class="sq" style="background:var(--terra);"></span>Challenge · Evaluación
-          </span>
-          <h2>El <em>desafío</em>.</h2>
-          <p class="lede">Aplicá lo trabajado durante el workshop a un caso real propuesto por <b>Galo</b>. Lo que se evalúa es simple: que la propuesta sirva, sorprenda y aguante crecimiento. <b>Tres ejes.</b></p>
+      <div class="challenge-wrap">
+        <div class="challenge-head">
+          <div class="head-left">
+            <span class="pill" style="border:1px solid var(--ink);color:var(--ink);">
+              <span class="sq" style="background:var(--terra);"></span>Challenge · 3 ejes de evaluación
+            </span>
+            <h2>El <em>desafío</em>.</h2>
+          </div>
+          <p class="lede">Aplicá lo trabajado durante el workshop a un caso real propuesto por <b>Galo</b>. Lo que se evalúa es simple: que la propuesta <b>sirva</b>, <b>sorprenda</b> y <b>aguante crecimiento</b>.</p>
         </div>
-        <div class="bases-list">
-          <div class="row"><span class="n">01</span><div><h4>Realismo</h4><p>¿Funciona en el mundo real? Restricciones, fricciones y costos — no slides bonitas, soluciones que sobreviven al primer usuario.</p></div></div>
-          <div class="row"><span class="n">02</span><div><h4>Innovación</h4><p>¿Hay un ángulo nuevo? Algo no obvio, una vuelta que sólo se podía dar con las <b>herramientas de hoy</b>.</p></div></div>
-          <div class="row"><span class="n">03</span><div><h4>Escalabilidad</h4><p>¿Puede crecer? Cuántos usuarios soporta, qué tan repetible es el proceso, qué cuesta sumar al siguiente.</p></div></div>
+        <div class="challenge-criteria">
+          <div class="col">
+            <span class="num">01</span>
+            <h4><em>Realismo</em></h4>
+            <p class="q">¿Funciona en el mundo real?</p>
+            <p class="desc">Restricciones, fricciones y costos — nada de slides bonitas. <b>Soluciones que sobreviven al primer usuario.</b></p>
+          </div>
+          <div class="col">
+            <span class="num">02</span>
+            <h4><em>Innovación</em></h4>
+            <p class="q">¿Hay un ángulo nuevo?</p>
+            <p class="desc">Algo no obvio, una vuelta que <b>sólo se podía dar con las herramientas de hoy</b>.</p>
+          </div>
+          <div class="col">
+            <span class="num">03</span>
+            <h4><em>Escalabilidad</em></h4>
+            <p class="q">¿Puede crecer?</p>
+            <p class="desc">Cuántos usuarios soporta, qué tan repetible es el proceso, <b>qué cuesta sumar al siguiente</b>.</p>
+          </div>
         </div>
       </div>
 
