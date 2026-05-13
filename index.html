@@ -382,6 +382,10 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .pill .sq{width:12px;height:12px;}
 
 /* small inline brand stamp for divider */
+.galo-brand-card{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:48px;text-align:center;padding:60px 0;}
+.galo-brand-card .galo-mark{height:280px;width:auto;display:block;}
+.galo-brand-card h1{margin:0;font-family:var(--display);font-weight:400;font-size:200px;color:var(--ink);letter-spacing:-0.04em;line-height:1;}
+.galo-brand-card h1 em{color:var(--terra);font-style:italic;}
 .brand-stamp{display:inline-flex;align-items:center;gap:10px;
   font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute-on-cream);}
 .brand-stamp img{height:24px;width:auto;}
@@ -1001,18 +1005,9 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="ring" style="width:420px;height:420px;left:-160px;bottom:-180px;"></div>
     <div class="frame">
       <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>19 / 20 · Partner del desafío</span></div>
-      <div class="session-divider">
-        <div class="left">
-          <div class="num-block"><span class="big">04</span><span class="lbl">Quienes traen el desafío</span></div>
-          <h1>¿Qué es<br><em>Galo</em>?</h1>
-          <p class="sp-bio" style="max-width:560px;"><b>Todavía no podemos contarlo.</b> Un producto en construcción, un equipo que ya está moviendo la aguja, una apuesta que se va a entender cuando salga al mundo. Hoy <b>traen el desafío</b> — del resto te enterás cuando lancen.</p>
-          <span class="brand-stamp"><img src="assets/logo-galo.png" alt="Galo"> Stealth mode · Próximamente</span>
-        </div>
-        <div class="speaker-card">
-          <span class="sp-role"><img src="assets/logo-galo.png" alt="Galo"> Challenge final</span>
-          <h3 class="sp-name">Franco<br><em>Pesce.</em></h3>
-          <p class="sp-bio"><b>CTO de Galo</b>. Diseña el desafío y mentoreá en vivo. Antes de soltar el problema, te baja el contexto y las reglas de juego.</p>
-        </div>
+      <div class="galo-brand-card">
+        <img class="galo-mark" src="assets/logo-galo.png" alt="Galo">
+        <h1><em>Galo</em>.</h1>
       </div>
       <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span></div><div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.png" alt="Galo"></div></div>
     </div>
