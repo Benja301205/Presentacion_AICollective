@@ -88,36 +88,36 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .topbar.on-cream .mark .dot{background:var(--navy);}
 
 /* ============ FOOTER (logos) ============ */
-.footbar{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;
-  padding-top:22px;border-top:1px solid var(--rule-on-cream);}
+.footbar{margin-top:auto;display:flex;justify-content:space-between;align-items:center;
+  padding-top:28px;border-top:1px solid var(--rule-on-cream);gap:48px;}
 .footbar.on-dark{border-top:1px solid var(--rule-on-dark);}
-.footbar .host{display:flex;align-items:center;gap:14px;
-  font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;}
-.footbar .host img{height:72px;width:auto;display:block;}
+.footbar .host{display:flex;align-items:center;gap:18px;
+  font-family:var(--mono);font-size:14px;letter-spacing:0.18em;text-transform:uppercase;}
+.footbar .host img{height:38px;width:auto;display:block;}
 .footbar .host .xpl-chip{display:inline-flex;align-items:center;justify-content:center;
-  width:46px;height:46px;border-radius:50%;
-  background:rgba(255,255,255,0.95);
-  flex-shrink:0;box-shadow:0 4px 14px rgba(0,0,0,0.18);}
-.footbar .host .xpl-chip img{width:auto;height:28px;display:block;}
-.footbar.on-cream .host .xpl-chip{background:radial-gradient(circle at 40% 35%, #5a1fa8 0%, #2d0d75 45%, #0a0420 100%);box-shadow:0 4px 14px rgba(0,0,0,0.28);}
-.footbar.on-cream .host .xpl-chip img{filter:brightness(0) invert(1);}
-.footbar .host .plus{font-family:var(--mono);font-size:22px;color:var(--mute-on-cream);font-weight:400;}
-.footbar.on-dark .host .plus{color:var(--mute-on-dark);}
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(255,255,255,0.95);flex-shrink:0;
+  box-shadow:0 4px 14px rgba(0,0,0,0.18);}
+.footbar.on-cream .host .xpl-chip{background:transparent;box-shadow:none;}
+.footbar.on-cream .host .xpl-chip img{mix-blend-mode:multiply;}
+.footbar .host .xpl-chip img{width:auto;height:34px;display:block;}
+.footbar .host .plus{font-family:var(--display);font-style:italic;font-size:26px;line-height:1;color:var(--orange);font-weight:400;opacity:0.9;}
+.footbar.on-dark .host .plus{color:var(--orange);}
 .footbar .host .lbl{color:var(--mute-on-cream);}
 .footbar.on-dark .host .lbl{color:var(--mute-on-dark);}
-.footbar .partners{display:flex;align-items:center;gap:24px;
-  font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;}
-.footbar .partners .lbl{color:var(--mute-on-cream);}
+.footbar .partners{display:flex;align-items:center;gap:22px;
+  font-family:var(--mono);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;}
+.footbar .partners .lbl{color:var(--mute-on-cream);font-weight:700;margin-right:6px;}
 .footbar.on-dark .partners .lbl{color:var(--mute-on-dark);}
-.footbar .partners img{height:22px;width:auto;display:block;}
-.footbar .partners img.anth-icon{height:16px;}
-.footbar .partners img.anth{height:16px;}
-.footbar .partners img.galo{height:30px;}
-.footbar .partners img.xplora{height:32px;}
+.footbar .partners img{height:24px;width:auto;display:block;}
+.footbar .partners img.anth-icon{height:22px;}
+.footbar .partners img.anth{height:22px;}
+.footbar .partners img.galo{height:26px;}
+.footbar .partners img.xplora{height:28px;}
 .footbar.on-dark .partners img.anth-icon,
 .footbar.on-dark .partners img.galo{filter:brightness(0) invert(1);opacity:0.92;}
 .footbar.on-dark .partners img.xplora{filter:brightness(0) invert(1);opacity:0.92;}
-.footbar .partners .sep{width:1px;height:24px;background:currentColor;opacity:0.25;}
+.footbar .partners .sep{width:1px;height:18px;background:currentColor;opacity:0.18;}
 
 /* ============ SLIDE 01 — HERO ============ */
 .bg-hero{background:#0a1322;color:var(--cream);overflow:hidden;}
@@ -204,7 +204,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .aic-mono{width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,0.96);
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 30px 80px rgba(0,0,0,0.18);position:relative;z-index:1;}
-.aic-mono img{width:320px;height:auto;display:block;}
+.aic-mono img{width:360px;height:auto;display:block;}
 .aic-mono::before{content:"";position:absolute;width:100%;height:100%;border-radius:50%;
   border:1.5px solid rgba(255,255,255,0.45);transform:scale(1.12);z-index:-1;}
 .aic-mono::after{content:"";position:absolute;width:100%;height:100%;border-radius:50%;
@@ -409,6 +409,35 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .pill .sq{width:12px;height:12px;}
 
 /* small inline brand stamp for divider */
+.galo-brand-card{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center;padding:40px 0;}
+.galo-brand-card .galo-question{font-family:var(--display);font-style:italic;font-size:72px;color:var(--terra);line-height:1;letter-spacing:-0.015em;margin-bottom:4px;}
+.galo-brand-card .galo-mark{height:320px;width:auto;display:block;}
+.galo-brand-card h1{margin:0;font-family:var(--display);font-weight:400;font-size:160px;color:var(--ink);letter-spacing:-0.04em;line-height:1;}
+.galo-brand-card h1 em{color:var(--terra);font-style:italic;}
+.galo-presenter{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:24px;padding-top:24px;border-top:1px solid var(--rule-on-cream);min-width:360px;}
+.galo-presenter .presenter-tag{font-family:var(--mono);font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:var(--mute-on-cream);font-weight:700;}
+.galo-presenter .presenter-name{font-family:var(--display);font-size:52px;line-height:1;color:var(--ink);letter-spacing:-0.01em;}
+.galo-presenter .presenter-name em{color:var(--terra);font-style:italic;}
+.galo-presenter .presenter-role{font-family:var(--mono);font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mute-on-cream);}
+
+/* ============ SLIDE 20 — Challenge criteria ============ */
+.challenge-wrap{flex:1;display:flex;flex-direction:column;gap:48px;padding-top:24px;}
+.challenge-head{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:end;padding-bottom:32px;border-bottom:1px solid var(--rule-on-cream);}
+.challenge-head .head-left{display:flex;flex-direction:column;gap:24px;}
+.challenge-head h2{margin:0;font-family:var(--display);font-weight:400;font-size:104px;line-height:0.96;color:var(--ink);letter-spacing:-0.015em;}
+.challenge-head h2 em{color:var(--terra);font-style:italic;}
+.challenge-head .lede{margin:0;font-size:21px;line-height:1.5;color:#3b322c;}
+.challenge-head .lede b{color:var(--ink);font-weight:700;}
+.challenge-criteria{display:grid;grid-template-columns:repeat(3,1fr);gap:0;flex:1;}
+.challenge-criteria .col{display:flex;flex-direction:column;gap:18px;padding:8px 36px 8px 0;border-right:1px solid var(--rule-on-cream);}
+.challenge-criteria .col + .col{padding-left:36px;}
+.challenge-criteria .col:last-child{border-right:none;padding-right:0;}
+.challenge-criteria .num{font-family:var(--mono);font-size:14px;letter-spacing:0.24em;color:var(--terra);font-weight:700;}
+.challenge-criteria h4{margin:0;font-family:var(--display);font-weight:400;font-size:56px;line-height:1;color:var(--ink);letter-spacing:-0.01em;}
+.challenge-criteria h4 em{color:var(--terra);font-style:italic;}
+.challenge-criteria .q{margin:0;font-family:var(--mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);font-weight:700;}
+.challenge-criteria p.desc{margin:0;font-size:18px;line-height:1.5;color:#3b322c;}
+.challenge-criteria p.desc b{color:var(--ink);font-weight:700;}
 .brand-stamp{display:inline-flex;align-items:center;gap:10px;
   font-family:var(--mono);font-size:18px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute-on-cream);}
 .brand-stamp img{height:24px;width:auto;}
@@ -544,7 +573,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         <div class="footbar on-dark">
           <div class="host">
             <img src="assets/logo-aicollective-white.png" alt="The AI Collective">
-            <span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span>
+            <span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span>
           </div>
           <div class="partners">
             <span class="lbl">Aliados</span>
@@ -570,9 +599,9 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 
         <div class="aic-hero">
           <div class="left">
-            <span class="eyebrow"><span class="sq"></span>Co-host del workshop</span>
-            <h1>El <em>poder</em><br>de la<br>comunidad.</h1>
-            <p class="lede">Una <b>red de practicantes</b> que aprende, comparte y construye con IA en Buenos Aires. Junto a Xplora · UCEMA, co-organizamos workshops, demos en vivo y challenges — <b>sin academicismo, con manos en el código</b>.</p>
+            <span class="eyebrow"><span class="sq"></span>World's Largest AI Community</span>
+            <h1>La <em>comunidad</em><br>de IA <em>más grande</em><br>del mundo.</h1>
+            <p class="lede">Un <b>non-profit global</b> que construye la <b>capa humana de la era IA</b>. Une <b>+250.000 líderes, builders y stakeholders</b> en <b>+150 chapters</b> de <b>+40 países</b> — para democratizar la frontera, construir confianza y coordinar cómo navegamos esta aceleración.</p>
           </div>
           <div class="right">
             <div class="aic-mono">
@@ -584,24 +613,24 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         <div class="aic-pillars">
           <div class="col">
             <span class="num">01 · Comunidad</span>
-            <h4>+1.000 practicantes</h4>
-            <p>Builders, founders, devs e investigadores conectados por el uso real de IA.</p>
+            <h4>+250.000 miembros</h4>
+            <p>Líderes, builders y stakeholders de IA en chapters locales — desde San Francisco a Buenos Aires.</p>
           </div>
           <div class="col">
-            <span class="num">02 · Encuentros</span>
-            <h4>Workshops abiertos</h4>
-            <p>Sesiones presenciales, demos en vivo y challenges con partners de la industria.</p>
+            <span class="num">02 · Alcance</span>
+            <h4>+150 chapters · +40 países</h4>
+            <p>Una red global con voz local. Cada chapter convoca, cura y arma los encuentros de su ciudad.</p>
           </div>
           <div class="col">
-            <span class="num">03 · Stack</span>
-            <h4>Herramientas reales</h4>
-            <p>Claude, Obsidian, agents y MCP — siempre desde casos de uso productivos.</p>
+            <span class="num">03 · Formato</span>
+            <h4>Demo nights · Salons · Dinners</h4>
+            <p>Conversaciones entre practicantes que <b>entrenaron modelos, shippearon productos</b> y mueven la aguja del ecosistema.</p>
           </div>
         </div>
         <div class="footbar on-dark">
           <div class="host">
             <img src="assets/logo-aicollective-white.png" alt="The AI Collective">
-            <span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span>
+            <span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span>
           </div>
           <div class="partners">
             <span class="lbl">Aliados</span>
@@ -621,18 +650,18 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="aic-wrap">
         <div class="aic-head">
-          <span class="mark"><span class="dot"></span>&nbsp;Sumate · The AI Collective Buenos Aires</span>
-          <span>03 / 20 · Networking</span>
+          <span class="mark"><span class="dot"></span>&nbsp;The AI Collective · Buenos Aires</span>
+          <span>03 / 20 · Chapter local</span>
         </div>
 
         <div class="aic-hero">
           <div class="left">
-            <span class="eyebrow"><span class="sq"></span>Únete a la comunidad</span>
-            <h1>Escaneá<br>y <em>conectá</em>.</h1>
-            <p class="lede">Sumate a <b>The AI Collective Buenos Aires</b>. Workshops, hackathons y demos con los builders que están moviendo la aguja de la <b>IA aplicada</b> en la región.</p>
+            <span class="eyebrow"><span class="sq"></span>The AI Collective Buenos Aires</span>
+            <h1>Hecho para<br><em>manijas</em>.</h1>
+            <p class="lede">El nodo local de la red global. <b>Workshops, charlas, demo nights y hackathons</b> — todo lo que mueve a builders, founders, devs y researchers de IA aplicada en BA. Un objetivo claro: <b>ser la comunidad de IA más grande de Argentina en 2027</b>.</p>
             <div class="qr-cta">
               <span class="qr-label">Escaneá el QR →</span>
-              <span class="qr-meta">Grupo de WhatsApp · Agenda de eventos</span>
+              <span class="qr-meta">Sumate al WhatsApp del chapter</span>
             </div>
           </div>
           <div class="right">
@@ -647,25 +676,25 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 
         <div class="aic-pillars">
           <div class="col">
-            <span class="num">↗ WhatsApp</span>
-            <h4>Comunidad activa</h4>
-            <p>Conversaciones diarias sobre IA aplicada, prompts y proyectos en marcha.</p>
+            <span class="num">↗ Mayo · 2026</span>
+            <h4>Primer encuentro</h4>
+            <p>Hoy <b>abrimos la rama</b> con este gran workshop de Claude. Si sale bien, somos <b>muy ambiciosos</b>.</p>
           </div>
           <div class="col">
-            <span class="num">↗ Eventos</span>
-            <h4>Próximos workshops</h4>
-            <p>Recibí cada lanzamiento antes que el feed público de la comunidad.</p>
+            <span class="num">↗ Junio — Julio · 2026</span>
+            <h4>Edición completa</h4>
+            <p><b>Workshops, charlas, demo nights y hackathon</b> — el formato largo del chapter para builders manija.</p>
           </div>
           <div class="col">
-            <span class="num">↗ Builders</span>
-            <h4>Networking real</h4>
-            <p>Conectá con +1.000 founders, devs y curiosos de Buenos Aires.</p>
+            <span class="num">↗ Visión 2027</span>
+            <h4>La más grande del país</h4>
+            <p>Convertir a esta comunidad en <b>la más grande de Argentina</b>.</p>
           </div>
         </div>
         <div class="footbar on-dark">
           <div class="host">
             <img src="assets/logo-aicollective-white.png" alt="The AI Collective">
-            <span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span>
+            <span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span>
           </div>
           <div class="partners">
             <span class="lbl">Aliados</span>
@@ -722,7 +751,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         <div class="footbar on-dark">
           <div class="host">
             <img src="assets/logo-aicollective-white.png" alt="The AI Collective">
-            <span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span>
+            <span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span>
           </div>
           <div class="partners">
             <span class="lbl">Aliados</span>
@@ -782,7 +811,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         <div class="footbar on-dark">
           <div class="host">
             <img src="assets/logo-aicollective-white.png" alt="The AI Collective">
-            <span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span>
+            <span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span>
           </div>
           <div class="partners">
             <span class="lbl">Aliados</span>
@@ -845,7 +874,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
       </div>
 
       <div class="footbar on-cream">
-        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
         <div class="partners"><span class="lbl">Aliados</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><img class="galo" src="assets/logo-galo.png" alt="Galo"><span class="sep"></span><span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span></div>
       </div>
     </div>
@@ -876,7 +905,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         </div>
       </div>
       <div class="footbar on-cream">
-        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
         <div class="partners"><span class="lbl">Sesión</span><img class="anth" src="assets/logo-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span></div>
       </div>
     </div>
@@ -896,7 +925,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         <div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div>
       </div>
       <div class="footbar on-cream">
-        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
         <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span></div>
       </div>
     </div>
@@ -916,7 +945,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         <div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div>
       </div>
       <div class="footbar on-cream">
-        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
         <div class="partners"><span class="lbl">Sesión</span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"><span class="sep"></span><span class="wemil-chip"><img src="assets/logo-wemil.png" alt="We Make It Lab"> We Make It Lab</span></div>
       </div>
     </div>
@@ -944,7 +973,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
         </div>
       </div>
       <div class="footbar on-cream">
-        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
         <div class="partners"><span class="lbl">Workshop · Lideki</span></div>
       </div>
     </div>
@@ -956,7 +985,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>11 / 20 · Sesión Jimmy</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>02 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
   </section>
   <section class="bg-cream">
@@ -964,7 +993,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>12 / 20 · Sesión Jimmy</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>03 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
   </section>
   <section class="bg-cream">
@@ -972,7 +1001,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>13 / 20 · Sesión Jimmy</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>04 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
   </section>
   <section class="bg-cream">
@@ -980,7 +1009,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>14 / 20 · Sesión Jimmy</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>05 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
   </section>
   <section class="bg-cream">
@@ -988,7 +1017,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>15 / 20 · Sesión Jimmy</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 02 · Workshop principal <span class="meta">— Jimmy Adaro</span></span><h2>Título del <em>tema</em><br>06 de 06.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Workshop · Lideki</span></div></div>
     </div>
   </section>
 
@@ -1010,7 +1039,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
           <p class="sp-bio"><b>Arquitecto de Ciberseguridad</b> en Personal. Comparte cómo aplica Claude + Obsidian en su <b>flujo diario</b> de trabajo y aprendizaje.</p>
         </div>
       </div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
     </div>
   </section>
 
@@ -1019,7 +1048,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>17 / 20 · Sesión Luciano</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 03 · Caso práctico <span class="meta">— Luciano Esteban</span></span><h2>Título del <em>tema</em><br>02 de 03.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
     </div>
   </section>
 
@@ -1028,7 +1057,7 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="frame">
       <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>18 / 20 · Sesión Luciano</span></div>
       <div class="content-placeholder"><span class="ph-eyebrow"><span class="sq"></span>Sesión 03 · Caso práctico <span class="meta">— Luciano Esteban</span></span><h2>Título del <em>tema</em><br>03 de 03.</h2><div class="slot"><div class="block lead"><span class="tag">Idea principal</span><h4>Concepto <em>central</em><br>del bloque.</h4><p>Bloque dominante: titular del tema, demo o visualización clave.</p></div><div class="block"><span class="tag">Detalle / Demo</span><p>Captura, esquema o fragmento que sostiene la idea.</p></div><div class="block"><span class="tag">Takeaway</span><p>La frase que el público se lleva al final.</p></div></div></div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Caso práctico · Personal</span></div></div>
     </div>
   </section>
 
@@ -1037,20 +1066,17 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="blob" style="width:640px;height:640px;right:-240px;top:-200px;"></div>
     <div class="ring" style="width:420px;height:420px;left:-160px;bottom:-180px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>19 / 20 · Desafío</span></div>
-      <div class="session-divider">
-        <div class="left">
-          <div class="num-block"><span class="big">04</span><span class="lbl">Presentación del desafío</span></div>
-          <h1>El <em>desafío</em><br>Galo.</h1>
-          <span class="brand-stamp"><img src="assets/logo-galo.png" alt="Galo"> Galo · Challenge final</span>
-        </div>
-        <div class="speaker-card">
-          <span class="sp-role">Challenge final · Galo</span>
-          <h3 class="sp-name">Franco<br><em>Pesce.</em></h3>
-          <p class="sp-bio"><b>CTO de Galo</b>. Lidera el diseño del desafío y el mentoreo en vivo. Cuenta el contexto del problema y las reglas de juego antes del trabajo en sala.</p>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>19 / 20 · Partner del desafío</span></div>
+      <div class="galo-brand-card">
+        <span class="galo-question">¿Qué es?</span>
+        <img class="galo-mark" src="assets/logo-galo.png" alt="Galo">
+        <div class="galo-presenter">
+          <span class="presenter-tag">Lo presenta</span>
+          <span class="presenter-name">Franco <em>Pesce</em></span>
+          <span class="presenter-role">CTO · Galo</span>
         </div>
       </div>
-      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.png" alt="Galo"></div></div>
+      <div class="footbar on-cream"><div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div><div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.png" alt="Galo"></div></div>
     </div>
   </section>
 
@@ -1059,27 +1085,42 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
     <div class="ring" style="width:720px;height:720px;right:-260px;bottom:-260px;"></div>
     <div class="blob" style="width:320px;height:320px;left:-120px;top:-100px;"></div>
     <div class="frame">
-      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>20 / 20 · Bases del desafío</span></div>
+      <div class="topbar on-cream"><span class="mark"><span class="dot"></span>&nbsp;Workshop · Claude + Obsidian</span><span>20 / 20 · El desafío</span></div>
 
-      <div class="bases-grid">
-        <div>
-          <span class="pill" style="border:1px solid var(--ink);color:var(--ink);margin-bottom:24px;">
-            <span class="sq" style="background:var(--terra);"></span>Challenge · Bases
-          </span>
-          <h2>Bases y<br><em>objetivos</em>.</h2>
-          <p class="lede">Reglas, criterios y entrega del challenge final junto a <b>Galo</b>. Aplicá lo trabajado durante el workshop a un caso real, en formato individual o por equipo.</p>
+      <div class="challenge-wrap">
+        <div class="challenge-head">
+          <div class="head-left">
+            <span class="pill" style="border:1px solid var(--ink);color:var(--ink);">
+              <span class="sq" style="background:var(--terra);"></span>Challenge · 3 ejes de evaluación
+            </span>
+            <h2>El <em>desafío</em>.</h2>
+          </div>
+          <p class="lede">Aplicá lo trabajado durante el workshop a un caso real propuesto por <b>Galo</b>. Lo que se evalúa es simple: que la propuesta <b>sirva</b>, <b>sorprenda</b> y <b>aguante crecimiento</b>.</p>
         </div>
-        <div class="bases-list">
-          <div class="row"><span class="n">01</span><div><h4>Objetivo del desafío</h4><p>[ Por desarrollar ] · Descripción breve del problema y del resultado esperado.</p></div></div>
-          <div class="row"><span class="n">02</span><div><h4>Modalidad de entrega</h4><p>[ Por desarrollar ] · Formato, plataforma de entrega y horario límite del mismo día.</p></div></div>
-          <div class="row"><span class="n">03</span><div><h4>Criterios de evaluación</h4><p>[ Por desarrollar ] · Qué se evalúa: claridad, uso de Claude + Obsidian, originalidad.</p></div></div>
-          <div class="row"><span class="n">04</span><div><h4>Premios y reconocimientos</h4><p>[ Por desarrollar ] · Detalle de premios y <b>sorteo de cuentas de Claude</b>.</p></div></div>
-          <div class="row"><span class="n">05</span><div><h4>Mentoreo y consultas</h4><p>[ Por desarrollar ] · Cómo y cuándo consultar a los mentores durante y después del evento.</p></div></div>
+        <div class="challenge-criteria">
+          <div class="col">
+            <span class="num">01</span>
+            <h4><em>Realismo</em></h4>
+            <p class="q">¿Funciona en el mundo real?</p>
+            <p class="desc">Restricciones, fricciones y costos — nada de slides bonitas. <b>Soluciones que sobreviven al primer usuario.</b></p>
+          </div>
+          <div class="col">
+            <span class="num">02</span>
+            <h4><em>Innovación</em></h4>
+            <p class="q">¿Hay un ángulo nuevo?</p>
+            <p class="desc">Algo no obvio, una vuelta que <b>sólo se podía dar con las herramientas de hoy</b>.</p>
+          </div>
+          <div class="col">
+            <span class="num">03</span>
+            <h4><em>Escalabilidad</em></h4>
+            <p class="q">¿Puede crecer?</p>
+            <p class="desc">Cuántos usuarios soporta, qué tan repetible es el proceso, <b>qué cuesta sumar al siguiente</b>.</p>
+          </div>
         </div>
       </div>
 
       <div class="footbar on-cream">
-        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">+</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
+        <div class="host"><img src="assets/logo-aicollective-full.png" alt="AI Collective"><span class="plus">×</span><span class="xpl-chip"><img src="assets/logo-xplora.png" alt="Xplora · UCEMA"></span><span class="lbl">Xplora</span></div>
         <div class="partners"><span class="lbl">Challenge</span><img class="galo" src="assets/logo-galo.png" alt="Galo"><span class="sep"></span><img class="anth-icon" src="assets/icon-anthropic.png" alt="Anthropic"></div>
       </div>
     </div>
