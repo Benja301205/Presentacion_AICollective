@@ -255,10 +255,13 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .xpl-compass::after{content:"";position:absolute;width:100%;height:100%;border-radius:50%;
   border:1.5px solid rgba(255,255,255,0.45);transform:scale(1.12);z-index:-1;}
 .xpl-qr-slot{position:absolute;bottom:10px;right:10px;
-  width:150px;height:150px;border-radius:12px;
-  border:1.5px dashed rgba(255,255,255,0.28);
-  background:rgba(255,255,255,0.04);overflow:hidden;}
-.xpl-qr-slot img{width:100%;height:100%;object-fit:contain;display:block;}
+  display:flex;flex-direction:column;align-items:center;gap:7px;}
+.xpl-qr-slot img{width:130px;height:130px;object-fit:contain;display:block;
+  background:#fff;padding:8px;border-radius:4px;
+  border:1px solid rgba(224,90,40,0.45);
+  box-shadow:0 4px 24px rgba(0,0,0,0.35);}
+.xpl-qr-label{font-family:var(--mono);font-size:9px;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--orange);}
 .xpl-three{display:grid;grid-template-columns:repeat(3,1fr);gap:0;flex-shrink:0;border-top:1px solid var(--rule-on-dark);padding-top:16px;color:#fff;}
 .xpl-three .col{padding-right:36px;border-right:1px solid var(--rule-on-dark);display:flex;flex-direction:column;gap:8px;}
 .xpl-three .col:last-child{border-right:none;}
@@ -764,7 +767,10 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
               <div class="xpl-compass">
                 <img src="assets/logo-xplora.png" alt="Xplora">
               </div>
-              <div class="xpl-qr-slot"><img src="assets/qr_pagxplora.png" alt="QR Xplora"></div>
+              <div class="xpl-qr-slot">
+                <img src="assets/qr_pagxplora.png" alt="QR Xplora">
+                <span class="xpl-qr-label">pagxplora.com</span>
+              </div>
             </div>
           </div>
         </div>
