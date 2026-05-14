@@ -243,24 +243,21 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
 .xpl-hero .lede{margin:0;font-size:19px;line-height:1.5;color:rgba(255,255,255,0.95);max-width:580px;}
 .xpl-hero .lede b{color:var(--orange);font-weight:800;}
 .xpl-hero .right{position:relative;display:flex;align-items:center;justify-content:center;}
-.xpl-visual-stack{position:relative;width:500px;height:500px;}
-.xpl-visual-stack::before{content:"";position:absolute;top:232px;left:232px;width:154px;height:1.5px;
-  background:repeating-linear-gradient(90deg,rgba(255,255,255,0.38) 0 8px,transparent 8px 16px);
-  transform:rotate(45deg);transform-origin:left center;z-index:1;}
-.xpl-compass{position:absolute;top:10px;left:10px;
-  width:260px;height:260px;display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,0.95);border-radius:50%;box-shadow:0 20px 60px rgba(0,0,0,0.28);}
-.xpl-compass img{width:182px;height:auto;display:block;position:relative;z-index:2;mix-blend-mode:multiply;}
+.xpl-visual-stack{display:flex;flex-direction:column;align-items:center;gap:0;width:260px;}
+.xpl-visual-stack::before{content:"";width:1.5px;height:52px;flex-shrink:0;
+  background:repeating-linear-gradient(180deg,rgba(255,255,255,0.38) 0 8px,transparent 8px 16px);}
+.xpl-compass{position:relative;width:220px;height:220px;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.95);border-radius:50%;box-shadow:0 20px 60px rgba(0,0,0,0.28);flex-shrink:0;}
+.xpl-compass img{width:155px;height:auto;display:block;position:relative;z-index:2;mix-blend-mode:multiply;}
 .xpl-compass::before{display:none;}
 .xpl-compass::after{content:"";position:absolute;width:100%;height:100%;border-radius:50%;
   border:1.5px solid rgba(255,255,255,0.45);transform:scale(1.12);z-index:-1;}
-.xpl-qr-slot{position:absolute;bottom:28px;right:16px;
-  display:flex;flex-direction:column;align-items:center;gap:7px;}
-.xpl-qr-slot img{width:130px;height:130px;object-fit:contain;display:block;
+.xpl-qr-slot{display:flex;flex-direction:column;align-items:center;gap:7px;}
+.xpl-qr-slot img{width:200px;height:200px;object-fit:contain;display:block;
   background:#fff;padding:8px;border-radius:4px;
   border:1px solid rgba(224,90,40,0.45);
   box-shadow:0 4px 24px rgba(0,0,0,0.35);}
-.xpl-qr-label{font-family:var(--mono);font-size:9px;letter-spacing:0.18em;
+.xpl-qr-label{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;
   text-transform:uppercase;color:var(--orange);}
 .xpl-three{display:grid;grid-template-columns:repeat(3,1fr);gap:0;flex-shrink:0;border-top:1px solid var(--rule-on-dark);padding-top:16px;color:#fff;}
 .xpl-three .col{padding-right:36px;border-right:1px solid var(--rule-on-dark);display:flex;flex-direction:column;gap:8px;}
@@ -768,8 +765,10 @@ deck-stage section{overflow:hidden;position:relative;font-family:var(--sans);}
                 <img src="assets/logo-xplora.png" alt="Xplora">
               </div>
               <div class="xpl-qr-slot">
-                <img src="assets/qr_pagxplora.png" alt="QR Xplora">
-                <span class="xpl-qr-label">pagxplora.com</span>
+                <a href="https://xploraucema.com/" target="_blank" rel="noopener">
+                  <img src="assets/qr_pagxplora.png" alt="QR Xplora">
+                </a>
+                <span class="xpl-qr-label">xploraucema.com</span>
               </div>
             </div>
           </div>
